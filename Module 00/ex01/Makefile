@@ -1,4 +1,8 @@
-SRC = phonebook.cpp
+SRC = 	Contact.class.hpp \
+				includes.hpp \
+				PhoneBook.class.hpp \
+				phonebook.cpp \
+				PhoneBook.cpp
 
 NAME = phonebook
 
