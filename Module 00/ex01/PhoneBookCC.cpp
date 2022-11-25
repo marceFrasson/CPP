@@ -16,7 +16,7 @@ void PhoneBook::addContact(PhoneBook phoneBook)
   int index;
 
   index = findOutIndex(phoneBook);
-  this->contacts->setIndex(index);
+  (this->contacts[index]).setIndex(index);
   std::cout << std::endl << "First Name: ";
   (this->contacts[index]).setFirstName();
   std::cout << "Last Name: ";
