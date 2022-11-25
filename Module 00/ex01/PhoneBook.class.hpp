@@ -1,7 +1,8 @@
 #ifndef PHONEBOOK_CLASS_H  
 # define PHONEBOOK_CLASS_H
 
-#include "includes.hpp"
+#include "includeLibs.hpp"
+#include "Contact.class.hpp"
 
 class PhoneBook
 {
@@ -16,7 +17,7 @@ class PhoneBook
     ~PhoneBook( void );
 
     void addContact(PhoneBook phoneBook);
-    void searchContact(PhoneBook phoneBook);
+    int searchContact(PhoneBook phoneBook);
     void printIndex(int index);
     void printColumn(std::string stringToPrint);
     int checkNextStep(std::string nextStep, int *currentPage);
@@ -24,15 +25,5 @@ class PhoneBook
     int findOutIndex(PhoneBook phoneBook);
     void formmatToPrint(Contact contact);  
 };
-
-PhoneBook::PhoneBook( void )
-{
-  this->numberOfContacts = 0;
-}
-
-PhoneBook::~PhoneBook( void )
-{
-  return ;
-}
 
 #endif

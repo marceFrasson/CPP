@@ -1,14 +1,16 @@
 SRC = 	Contact.class.hpp \
+				Contact.cpp \
+				includeLibs.hpp \
 				includes.hpp \
 				PhoneBook.class.hpp \
 				phonebook.cpp \
-				PhoneBook.cpp
+				PhoneBookCC.cpp
 
 NAME = phonebook
 
 CC = g++
 
-FLAGS = -Wall -Wextra -Werror -Wpedantic -std=c++98
+FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic 
 
 
 $(NAME):
