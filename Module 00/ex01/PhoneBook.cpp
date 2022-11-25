@@ -15,60 +15,82 @@ void PhoneBook::addContact(PhoneBook phoneBook)
 {
   int index;
 
-  index = findOutIndex(phoneBook);  
+  index = findOutIndex(phoneBook);
+  (this->contacts[index]).setIndex(index);
   std::cout << std::endl << "First Name: ";
-  (phoneBook.contacts[index]).setFirstName();
+  (this->contacts[index]).setFirstName();
   std::cout << "Last Name: ";
-  (phoneBook.contacts[index]).setLastName();
+  (this->contacts[index]).setLastName();
   std::cout << "Nickname: ";
-  (phoneBook.contacts[index]).setNickname();
+  (this->contacts[index]).setNickname();
   std::cout << "Phone Number: ";
-  (phoneBook.contacts[index]).setPhoneNumber();
+  (this->contacts[index]).setPhoneNumber();
   std::cout << "Darkest Secret: ";
-  (phoneBook.contacts[index]).setDarkestSecret();
-  phoneBook.numberOfContacts++;
-  std::cout << "noc: " << phoneBook.numberOfContacts << std::endl;
+  (this->contacts[index]).setDarkestSecret();
+  if (this->numberOfContacts < 8)
+    this->numberOfContacts++;
   printMenu();
 }
 
 int  PhoneBook::searchContact(PhoneBook phoneBook)
 {
   int i = -1;
+  int endOfPage;
   int currentPage = FIRST_PAGE;
   std::string nextStep;
 
-  while (++i < currentPage)
+  if (phoneBook.numberOfContacts > 4)
+    endOfPage = 4;
+  else
+    endOfPage = phoneBook.numberOfContacts;
+  
+  while (true)
   {
-    std::cout << "|";
-    printIndex((phoneBook.contacts[i]).getIndex());
-    std::cout << "|";
-    printColumn((phoneBook.contacts[i]).getFirstName());
-    std::cout << "|";
-    printColumn((phoneBook.contacts[i]).getLastName());
-    std::cout << "|";
-    printColumn((phoneBook.contacts[i]).getNickname());
-    std::cout << "|" << std::endl << std::endl;
-    while (i == ASK_AGAIN)
+    while (++i < endOfPage)
     {
-      std::cout << "> ";
-      std::getline( std::cin, nextStep );
-      if (nextStep == "EXIT")
-        return (1);
-      else if (nextStep == "M")
+      std::cout << "|";
+      printIndex((phoneBook.contacts[i]).getIndex());
+      std::cout << "|";
+      printColumn((phoneBook.contacts[i]).getFirstName());
+      std::cout << "|";
+      printColumn((phoneBook.contacts[i]).getLastName());
+      std::cout << "|";
+      printColumn((phoneBook.contacts[i]).getNickname());
+      std::cout << "|" << std::endl << std::endl;
+    }
+    std::cout << "   next page (N) | menu (M) | exit (EXIT)" << std::endl << std::endl;
+    std::cout << "> ";
+    std::getline( std::cin, nextStep );
+    if (nextStep == "EXIT")
+      return (1);
+    else if (nextStep == "M")
+      return (0);
+    else if (nextStep == "N")
+    {
+      std::cout << std::endl;
+      if (currentPage == FIRST_PAGE)
       {
-        std::cout << std::endl << std::endl;
-        printMenu();
-        break ;
+        if (phoneBook.numberOfContacts > 4)
+        {
+          endOfPage = phoneBook.numberOfContacts;
+          i = 3;
+          currentPage = LAST_PAGE;
+        }
+        else
+          i = -1;
       }
-      std::cout << std::endl << std::endl;
-      i = checkNextStep(nextStep, &currentPage);
-      continue ;
+      else
+      {
+        endOfPage = 4;
+        i = -1;
+        currentPage = FIRST_PAGE;
+      }
     }
   }
   return (0);
 }
 
-void PhoneBook::printIndex(std::string index)
+void PhoneBook::printIndex(int index)
 {
   int i = -1;
 
@@ -117,7 +139,7 @@ void PhoneBook::openIndexSpace(PhoneBook phoneBook)
 {
   int i = -1;
 
-  while (++i < 8)
+  while (++i < 7)
     phoneBook.contacts[i] = phoneBook.contacts[i + 1];
 }
 
@@ -125,8 +147,8 @@ int PhoneBook::findOutIndex(PhoneBook phoneBook)
 {
   if (phoneBook.numberOfContacts == 8)
   {
-    openIndexSpace(phoneBook);
-    return (8);
+    // openIndexSpace(phoneBook);
+    return (0);
   }
   else
     return (phoneBook.numberOfContacts);
