@@ -14,7 +14,6 @@ PhoneBook::~PhoneBook( void )
 void PhoneBook::addContact(PhoneBook phoneBook)
 {
   int index = findOutIndex(phoneBook);
-  std::cout << "index : " << index << std::endl;
 
   (this->contacts[index]).setIndex(index);
   std::cout << std::endl << "First Name: ";
@@ -28,10 +27,6 @@ void PhoneBook::addContact(PhoneBook phoneBook)
   std::cout << "Darkest Secret: ";
   (this->contacts[index]).setDarkestSecret();
   this->numberOfContacts++;
-  std::cout << std::endl << "conIndex : " << (this->contacts[index]).getIndex() << std::endl
-    << "numOfCon : " << this->numberOfContacts << std::endl;
-  std::cout << std::endl << "Contact " << (this->contacts[index]).getFirstName()
-    << " " << (this->contacts[index]).getLastName() << " added." << std::endl;
   printMenu();
 }
 
