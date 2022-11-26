@@ -27,6 +27,8 @@ void PhoneBook::addContact(PhoneBook phoneBook)
   std::cout << "Darkest Secret: ";
   (this->contacts[index]).setDarkestSecret();
   this->numberOfContacts++;
+  std::cout << std::endl << "Contact " << (this->contacts[index]).getFirstName() << " "
+    << (this->contacts[index]).getLastName() << " added." << std::endl;
   printMenu();
 }
 
