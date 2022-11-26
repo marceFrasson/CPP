@@ -16,14 +16,13 @@ class PhoneBook
     PhoneBook( void );
     ~PhoneBook( void );
 
-    void addContact(PhoneBook phoneBook);
-    int searchContact(PhoneBook phoneBook);
-    void printIndex(int index);
-    void printColumn(std::string stringToPrint);
-    int checkNextStep(std::string nextStep, int *currentPage);
-    void openIndexSpace(PhoneBook phoneBook);
-    int findOutIndex(PhoneBook phoneBook);
-    void formmatToPrint(Contact contact);  
+    void  addContact(PhoneBook phoneBook);
+    int   searchContact(PhoneBook phoneBook);
+    void  printIndex(int index);
+    void  printColumn(std::string stringToPrint);
+    int   checkNextStep(std::string nextStep, int *currentPage);
+    int   findOutIndex(PhoneBook phoneBook);
+    void  formmatToPrint(Contact contact);  
 };
 
 #endif

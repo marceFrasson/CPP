@@ -12,7 +12,10 @@ Contact::~Contact( void )
 
 void Contact::setIndex(int index)
 {
-  this->index = index + 1;
+  if (index < 8)
+    this->index = index + 1;
+  else
+    this->index = index % 8;
 }
 
 void Contact::setFirstName(void)

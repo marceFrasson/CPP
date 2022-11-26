@@ -13,9 +13,9 @@ PhoneBook::~PhoneBook( void )
 
 void PhoneBook::addContact(PhoneBook phoneBook)
 {
-  int index;
+  int index = findOutIndex(phoneBook);
+  std::cout << "index : " << index << std::endl;
 
-  index = findOutIndex(phoneBook);
   (this->contacts[index]).setIndex(index);
   std::cout << std::endl << "First Name: ";
   (this->contacts[index]).setFirstName();
@@ -27,8 +27,11 @@ void PhoneBook::addContact(PhoneBook phoneBook)
   (this->contacts[index]).setPhoneNumber();
   std::cout << "Darkest Secret: ";
   (this->contacts[index]).setDarkestSecret();
-  if (this->numberOfContacts < 8)
-    this->numberOfContacts++;
+  this->numberOfContacts++;
+  std::cout << std::endl << "conIndex : " << (this->contacts[index]).getIndex() << std::endl
+    << "numOfCon : " << this->numberOfContacts << std::endl;
+  std::cout << std::endl << "Contact " << (this->contacts[index]).getFirstName()
+    << " " << (this->contacts[index]).getLastName() << " added." << std::endl;
   printMenu();
 }
 
@@ -37,12 +40,15 @@ int  PhoneBook::searchContact(PhoneBook phoneBook)
   int i = -1;
   int endOfPage;
   int currentPage = FIRST_PAGE;
+  int numberOfContacts = phoneBook.numberOfContacts;
   std::string nextStep;
 
-  if (phoneBook.numberOfContacts > 4)
+  if (numberOfContacts > 8)
+    numberOfContacts = 8;
+  if (numberOfContacts > 4)
     endOfPage = 4;
   else
-    endOfPage = phoneBook.numberOfContacts;
+    endOfPage = numberOfContacts;
   
   while (true)
   {
@@ -70,9 +76,9 @@ int  PhoneBook::searchContact(PhoneBook phoneBook)
       std::cout << std::endl;
       if (currentPage == FIRST_PAGE)
       {
-        if (phoneBook.numberOfContacts > 4)
+        if (numberOfContacts > 4)
         {
-          endOfPage = phoneBook.numberOfContacts;
+          endOfPage = numberOfContacts;
           i = 3;
           currentPage = LAST_PAGE;
         }
@@ -135,22 +141,11 @@ int PhoneBook::checkNextStep(std::string nextStep, int *currentPage)
   return (ASK_AGAIN);
 }
 
-void PhoneBook::openIndexSpace(PhoneBook phoneBook)
-{
-  int i = -1;
-
-  while (++i < 7)
-    phoneBook.contacts[i] = phoneBook.contacts[i + 1];
-}
-
 int PhoneBook::findOutIndex(PhoneBook phoneBook)
 {
-  if (phoneBook.numberOfContacts == 8)
-  {
-    // openIndexSpace(phoneBook);
-    return (0);
-  }
-  else
+  if (phoneBook.numberOfContacts < 8)
     return (phoneBook.numberOfContacts);
+  else
+    return (phoneBook.numberOfContacts % 8);
   return (0);
 }
