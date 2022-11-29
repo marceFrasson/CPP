@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 int main(void)
-{
+{ 
   Zombie stackZombie("stack allocated zombie");
   stackZombie.annouce();
 
