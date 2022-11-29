@@ -9,7 +9,7 @@ int main( void )
   zombies = zombieHorde(N, "zombieHorde");
 
   while (++i < N)
-    (zombies[i]).annouce();
+    zombies[i].annouce();
 
   delete[] zombies;
   return (0);
