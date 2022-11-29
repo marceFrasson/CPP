@@ -1,5 +1,5 @@
-#ifndef PHONEBOOK_CLASS_H  
-# define PHONEBOOK_CLASS_H
+#ifndef PHONEBOOK_CLASS_HPP  
+# define PHONEBOOK_CLASS_HPP
 
 #include "includeLibs.hpp"
 #include "Contact.class.hpp"
