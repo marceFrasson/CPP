@@ -2,13 +2,11 @@
 
 int main(void)
 { 
-  Zombie stackZombie("stack allocated zombie");
-  stackZombie.annouce();
+  Zombie *zombie = newZombie("heap allocated");
+  zombie->annouce();
 
-  Zombie *heapZombie = newZombie("heap allocated zombie");
-
-  randomChump("local stack zombie");
+  randomChump("stack allocated");
   
-  delete heapZombie;
+  delete zombie;
   return (0);
 }
