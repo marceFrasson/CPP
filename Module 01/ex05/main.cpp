@@ -43,7 +43,7 @@ void atendentResponse( int i )
   }
 }
 
-void inBetweenInteractions( void )
+void delay( void )
 {
   std::cout << std::endl;
   usleep(1000000);
@@ -67,10 +67,10 @@ int main( void )
   {
     std::cout << "Harl: " << std::endl << std::endl;
     harl.complain(levels[i]);
-    inBetweenInteractions();
+    delay();
     std::cout << "\nAtendent: " << std::endl;
     atendentResponse(i);
-    inBetweenInteractions();
+    delay();
     i++;
   }
 
