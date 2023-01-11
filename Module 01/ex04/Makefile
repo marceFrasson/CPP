@@ -1,13 +1,7 @@
-SRC = 	HumanA.cpp \
-				HumanA.hpp \
-				HumanB.cpp \
-				HumanB.hpp \
-				main.cpp \
-				Weapon.cpp \
-				Weapon.hpp
+SRC = 	main.cpp \
+				includes.hpp
 
-
-NAME = violence
+NAME = replace
 
 CC = g++
 
@@ -17,7 +11,7 @@ FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic
 $(NAME):
 	@$(CC) $(FLAGS) $(SRC) -o $@
 	@echo ""
-	@echo "|		violence created		|"
+	@echo "|		replace created		|"
 	@echo ""
 
 all: $(NAME)
@@ -25,14 +19,14 @@ all: $(NAME)
 clean:
 	@rm -f $(NAME)
 	@echo ""
-	@echo "|		violence deleted		|"
+	@echo "|		replace deleted		|"
 	@echo ""
 
 fclean:
 	@rm -f $(NAME)
 	@rm -f *.o
 	@echo ""
-	@echo "|		violence deleted		|"
+	@echo "|		replace deleted		|"
 	@echo ""
 
 re: fclean all
