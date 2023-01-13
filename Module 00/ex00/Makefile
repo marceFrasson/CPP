@@ -7,7 +7,7 @@ CC = g++
 FLAGS = -Wall -Wextra -Werror -Wpedantic -std=c++98
 
 
-$(NAME):
+$(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $@
 	@echo ""
 	@echo "|		megaphone created		|"

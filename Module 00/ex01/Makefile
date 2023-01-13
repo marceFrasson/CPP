@@ -13,7 +13,7 @@ CC = g++
 FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic 
 
 
-$(NAME):
+$(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $@
 	@echo ""
 	@echo "|		phonebook created		|"

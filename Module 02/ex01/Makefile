@@ -2,6 +2,8 @@ SRC = 	Fixed.cpp \
 				Fixed.hpp \
 				main.cpp
 
+
+
 NAME = Fixed
 
 CC = g++
@@ -9,8 +11,8 @@ CC = g++
 FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic 
 
 
-$(NAME):
-	@$(CC) $(FLAGS) $(SRC) -o $@
+$(NAME): $(SRC)
+	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
 	@echo ""
 	@echo "|		Fixed created		|"
 	@echo ""
