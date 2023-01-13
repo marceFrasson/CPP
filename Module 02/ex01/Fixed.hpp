@@ -12,18 +12,23 @@ class Fixed {
 
   public:
 
-    Fixed( const int intValue );                         // default constructor
-    Fixed( const float floatValue );                     // default constructor
-    Fixed( const Fixed &instance );                      // copy constructor
+    Fixed( void );                                       // default constructor
+    Fixed( const Fixed &source );                        // copy constructor
+    Fixed( const int intValue );                         // int constructor
+    Fixed( const float floatValue );                     // float constructor
 
     ~Fixed( void );                                      // destructor
 
-    Fixed &operator=( Fixed const &right_hand_side );    // copy assignment operator overload
-    Fixed &operator<<( Fixed const &right_hand_side );   // copy assignment operator overload
+    Fixed &operator=( Fixed const &source );             // copy assignment operator overload
 
     int   getRawBits( void ) const;                      // get the raw bits of the fixed-point value
     void  setRawBits( int const raw );                   // set the raw bits of the fixed-point value
+    
+    int   toInt( void ) const;                           // converts fixed-point value to int
+    float toFloat( void ) const;                         // converts fixed-point value to float
 
 };
+
+std::ostream &operator<<( std::ostream &outputStream, const Fixed &fixedPoint );
 
 #endif
