@@ -2,7 +2,18 @@
 
 const int Fixed::_fractionalBits = 8;
 
-Fixed::Fixed( void )
+Fixed::Fixed( const int intValue )
+{
+  std::cout << "Default constructor called" << std::endl;
+
+
+
+  this->_rawBits = 0;
+
+  return ;
+}
+
+Fixed::Fixed( const float floatValue )
 {
   std::cout << "Default constructor called" << std::endl;
 
@@ -10,6 +21,7 @@ Fixed::Fixed( void )
 
   return ;
 }
+
 Fixed::Fixed( const Fixed &instance )
 {
   std::cout << "Copy constructor called" << std::endl;
@@ -18,6 +30,7 @@ Fixed::Fixed( const Fixed &instance )
 
   return ;
 }
+
 Fixed::~Fixed( void )
 {
   std::cout << "Destructor called" << std::endl;
