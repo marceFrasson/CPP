@@ -10,11 +10,11 @@ Fixed::Fixed( void )
 
   return ;
 }
-Fixed::Fixed( const Fixed &instance )
+Fixed::Fixed( const Fixed &source )
 {
   std::cout << "Copy constructor called" << std::endl;
 
-  this->operator=(instance);
+  this->operator=(source);
 
   return ;
 }
@@ -25,11 +25,11 @@ Fixed::~Fixed( void )
   return ;
 }
 
-Fixed &Fixed::operator=( const Fixed &right_hand_side )
+Fixed &Fixed::operator=( const Fixed &rightHandSide )
 {
   std::cout << "Copy assignment operator called" << std::endl;
 
-  if (this == &right_hand_side)
+  if (this == &rightHandSide)
     return *this;
 
   this->setRawBits(this->getRawBits());

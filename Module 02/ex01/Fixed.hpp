@@ -19,7 +19,7 @@ class Fixed {
 
     ~Fixed( void );                                      // destructor
 
-    Fixed &operator=( Fixed const &source );             // copy assignment operator overload
+    Fixed &operator=( Fixed const &rightHandSide );      // copy assignment operator overload
 
     int   getRawBits( void ) const;                      // get the raw bits of the fixed-point value
     void  setRawBits( int const raw );                   // set the raw bits of the fixed-point value
