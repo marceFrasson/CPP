@@ -6,7 +6,7 @@ Fixed::Fixed( void )
 {
   std::cout << "Default constructor called" << std::endl;
 
-  this->setRawBits(0);
+  setRawBits(0);
 
   return ;
 }
@@ -15,7 +15,7 @@ Fixed::Fixed( const Fixed &source )
 {
   std::cout << "Copy constructor called" << std::endl;
 
-  this->operator=(source);
+  operator=(source);
 
   return ;
 }
@@ -24,14 +24,14 @@ Fixed::Fixed( const int intValue )
 {
   std::cout << "Int constructor called" << std::endl;
 
-  this->setRawBits(intValue << _fractionalBits);
+  setRawBits(intValue << _fractionalBits);
 }
 
 Fixed::Fixed( const float floatValue )
 {
   std::cout << "Float constructor called" << std::endl;
 
-  this->setRawBits((int)(floatValue * (1 << _fractionalBits)));
+  setRawBits((int)(floatValue * (1 << _fractionalBits)));
 }
 
 Fixed::~Fixed( void )
@@ -46,29 +46,29 @@ Fixed &Fixed::operator=( const Fixed &rightHandSide )
   std::cout << "Copy assignment operator called" << std::endl;
 
   if (this != &rightHandSide)
-    this->setRawBits(rightHandSide.getRawBits());
+    setRawBits(rightHandSide.getRawBits());
 
   return (*this);
 }
 
 int   Fixed::getRawBits( void ) const
 {
-  return (this->_rawBits);
+  return (_rawBits);
 }
 
 void  Fixed::setRawBits( int const raw )
 {
-  this->_rawBits = raw;
+  _rawBits = raw;
 }
 
 int Fixed::toInt( void ) const
 {
-  return(this->getRawBits() >> _fractionalBits);
+  return(getRawBits() >> _fractionalBits);
 }
 
 float Fixed::toFloat( void ) const
 {
-  return((float) this->getRawBits() / (1 << _fractionalBits));
+  return((float) getRawBits() / (1 << _fractionalBits));
 }
 
 std::ostream &operator<<( std::ostream &outputStream, const Fixed &fixedPoint )

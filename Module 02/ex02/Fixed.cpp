@@ -4,26 +4,26 @@ const int Fixed::_fractionalBits = 8;
 
 Fixed::Fixed( void )
 {
-  this->setRawBits(0);
+  setRawBits(0);
 
   return ;
 }
 
 Fixed::Fixed( const Fixed &source )
 {
-  this->operator=(source);
+  operator=(source);
 
   return ;
 }
 
 Fixed::Fixed( const int intValue )
 {
-  this->setRawBits(intValue << _fractionalBits);
+  setRawBits(intValue << _fractionalBits);
 }
 
 Fixed::Fixed( const float floatValue )
 {
-  this->setRawBits((int)(floatValue * (1 << _fractionalBits) ));
+  setRawBits((int)(floatValue * (1 << _fractionalBits) ));
 }
 
 Fixed::~Fixed( void )
@@ -34,7 +34,7 @@ Fixed::~Fixed( void )
 Fixed &Fixed::operator=( const Fixed &rightHandSide )
 {
   if (this != &rightHandSide)
-    this->setRawBits(rightHandSide.getRawBits());
+    setRawBits(rightHandSide.getRawBits());
 
   return (*this);
 }
@@ -43,7 +43,7 @@ Fixed Fixed::operator+( Fixed const &rightHandSide ) const
 {
   Fixed temp;
 
-  temp.setRawBits(this->getRawBits() + rightHandSide.getRawBits());
+  temp.setRawBits(getRawBits() + rightHandSide.getRawBits());
 
   return (temp);
 }
@@ -52,7 +52,7 @@ Fixed Fixed::operator-( Fixed const &rightHandSide ) const
 {
   Fixed temp;
 
-  temp.setRawBits(this->getRawBits() - rightHandSide.getRawBits());
+  temp.setRawBits(getRawBits() - rightHandSide.getRawBits());
   
   return (temp);
 }
@@ -61,7 +61,7 @@ Fixed Fixed::operator*( Fixed const &rightHandSide ) const
 {
   Fixed temp;
 
-  temp.setRawBits((this->getRawBits() * rightHandSide.getRawBits()) >> _fractionalBits);
+  temp.setRawBits((getRawBits() * rightHandSide.getRawBits()) >> _fractionalBits);
   
   return (temp);
 }
@@ -70,51 +70,51 @@ Fixed Fixed::operator/( Fixed const &rightHandSide ) const
 {
   Fixed temp;
 
-  temp.setRawBits((this->getRawBits() / rightHandSide.getRawBits()) << _fractionalBits);
+  temp.setRawBits((getRawBits() / rightHandSide.getRawBits()) << _fractionalBits);
   
   return (temp);
 }
 
 bool Fixed::operator>( Fixed const &rightHandSide ) const
 {
-  return (this->getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rightHandSide.getRawBits());
 }
 
 bool Fixed::operator<( Fixed const &rightHandSide ) const
 {
-  return (this->getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rightHandSide.getRawBits());
 }
 
 bool Fixed::operator>=( Fixed const &rightHandSide ) const
 {
-  return (this->getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rightHandSide.getRawBits());
 }
 
 bool Fixed::operator<=( Fixed const &rightHandSide ) const
 {
-  return (this->getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rightHandSide.getRawBits());
 }
 
 bool Fixed::operator==( Fixed const &rightHandSide ) const
 {
-  return (this->getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rightHandSide.getRawBits());
 }
 
 bool Fixed::operator!=( Fixed const &rightHandSide ) const
 {
-  return (this->getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rightHandSide.getRawBits());
 }
 
 Fixed &Fixed::operator++( void )
 {
-  this->setRawBits(this->getRawBits() + 1);
+  setRawBits(getRawBits() + 1);
 
   return (*this);
 }
 
 Fixed &Fixed::operator--( void )
 {
-  this->setRawBits(this->getRawBits() - 1);
+  setRawBits(getRawBits() - 1);
 
   return (*this);
 }
@@ -123,7 +123,7 @@ Fixed Fixed::operator++( int )
 {
   Fixed temp(*this);
 
-  this->setRawBits(this->getRawBits() + 1);
+  setRawBits(getRawBits() + 1);
 
   return (temp);
 }
@@ -132,7 +132,7 @@ Fixed Fixed::operator--( int )
 {
   Fixed temp(*this);
   
-  this->setRawBits(this->getRawBits() - 1);
+  setRawBits(getRawBits() - 1);
 
   return (temp);
 }
@@ -171,22 +171,22 @@ Fixed const &Fixed::min( const Fixed &fixedPoint1, const Fixed &fixedPoint2 )
 
 int Fixed::getRawBits( void ) const
 {
-  return (this->_rawBits);
+  return (_rawBits);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-  this->_rawBits = raw;
+  _rawBits = raw;
 }
 
 int Fixed::toInt( void ) const
 {
-  return(this->getRawBits() >> _fractionalBits);
+  return(getRawBits() >> _fractionalBits);
 }
 
 float Fixed::toFloat( void ) const
 {
-  return((float) this->getRawBits() / (1 << _fractionalBits));
+  return((float) getRawBits() / (1 << _fractionalBits));
 }
 
 std::ostream &operator<<( std::ostream &outputStream, const Fixed &fixedPoint )
