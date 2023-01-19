@@ -1,5 +1,3 @@
-This text was written as part of a learning project to understand fixed-point numbers and provides an overview about the subject and its uses.
-
 # Fixed-point numbers
 
 
