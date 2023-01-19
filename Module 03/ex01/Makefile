@@ -4,7 +4,7 @@ SRC = 	ClapTrap.cpp \
 				ScavTrap.cpp \
 				ScavTrap.hpp
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 CC = g++
 
@@ -13,7 +13,7 @@ FLAGS = -std=c++98 -Wall -Wextra -Werror
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
 	@echo ""
-	@echo "|		ClapTrap created		|"
+	@echo "|		ScavTrap created		|"
 	@echo ""
 
 all: $(NAME)
@@ -21,14 +21,14 @@ all: $(NAME)
 clean:
 	@rm -f $(NAME)
 	@echo ""
-	@echo "|		ClapTrap deleted		|"
+	@echo "|		ScavTrap deleted		|"
 	@echo ""
 
 fclean:
 	@rm -f $(NAME)
 	@rm -f *.o
 	@echo ""
-	@echo "|		ClapTrap deleted		|"
+	@echo "|		ScavTrap deleted		|"
 	@echo ""
 
 re: fclean all

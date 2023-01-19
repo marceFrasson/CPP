@@ -1,27 +1,33 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void )
 {
 
-  ClapTrap jhonDoe("Jhon Doe");
+  ScavTrap jhonDoe("Jhon Doe");
 
 	std::cout << std::endl;
 
 	jhonDoe.attack("Karen");
+	jhonDoe.ClapTrap::attack("Karen");
 
   std::cout << std::endl;
   
-	jhonDoe.takeDamage(5);
-	jhonDoe.beRepaired(5);
+	jhonDoe.takeDamage(50);
+	jhonDoe.beRepaired(50);
 
 	std::cout << std::endl;
 
-	jhonDoe.takeDamage(5);
-	jhonDoe.takeDamage(5);
+	jhonDoe.guardGate();
 
 	std::cout << std::endl;
 
-	jhonDoe.beRepaired(5);
+	jhonDoe.takeDamage(50);
+	jhonDoe.takeDamage(50);
+
+	std::cout << std::endl;
+
+	jhonDoe.beRepaired(50);
+	jhonDoe.ClapTrap::attack("Karen");
 	jhonDoe.attack("Karen");
 
 	std::cout << std::endl;
