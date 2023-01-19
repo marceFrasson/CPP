@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal( void )
+Animal::Animal( void ) : _type( "Unknown" )
 {
   std::cout << "Animal constructor called." << std::endl;
 
@@ -32,4 +32,9 @@ Animal &Animal::operator=( const Animal &rightHandSide )
 void Animal::makeSound( void )
 {
   std::cout << "..." << std::endl;
+}
+
+std::string Animal::getType( void )
+{
+  return (_type);
 }

@@ -4,7 +4,11 @@ SRC = 	Animal.cpp \
 				Cat.hpp \
 				Dog.cpp \
 				Dog.hpp \
-				main.cpp
+				main.cpp \
+				WrongAnimal.cpp \
+				WrongAnimal.hpp \
+				WrongCat.cpp \
+				WrongCat.hpp
 
 NAME = Animal
 

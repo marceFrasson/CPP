@@ -20,6 +20,7 @@ class Animal
     Animal &operator=( const Animal &rightHandSide );
 
     void makeSound( void );
+    std::string getType( void );
   
 };
 
