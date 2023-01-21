@@ -65,6 +65,6 @@
     "valarray": "cpp",
     "variant": "cpp"
   },
-  "editor.fontSize": 19,
+  "editor.fontSize": 16,
   "window.zoomLevel": 0.5
 }

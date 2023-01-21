@@ -21,8 +21,6 @@ class Animal
 
     void makeSound( void );
     std::string getType( void );
-
-    // virtual Animal *clone() = 0;
   
 };
 

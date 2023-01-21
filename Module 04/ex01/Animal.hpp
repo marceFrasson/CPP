@@ -15,7 +15,7 @@ class Animal
     Animal( void );
     Animal( std::string type );
     Animal( const Animal &source );
-    virtual ~Animal( void );
+    virtual ~Animal( void ) = 0;
 
     Animal &operator=( const Animal &rightHandSide );
 
