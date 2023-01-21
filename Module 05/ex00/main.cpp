@@ -6,7 +6,7 @@
 /*   By: mfrasson <mfrasson@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 02:23:51 by mmoreira          #+#    #+#             */
-/*   Updated: 2023/01/20 21:12:53 by mfrasson         ###   ########.fr       */
+/*   Updated: 2023/01/20 22:22:51 by mfrasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main( void )
 {
-  std::cout << std::endl << std::endl;
+  std::cout << std::endl;
   
   try
 	{
@@ -112,7 +112,7 @@ int	main( void )
     std::cerr << exception.what() << std::endl;
   }
 
-  std::cout << std::endl << std::endl;
+  std::cout << std::endl;
 
 	return (0);
 }
