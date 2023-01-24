@@ -52,18 +52,18 @@ void delay( void )
 int main( void )
 {
   Harl harl;
-  std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-  std::string interactions[] = {DEBUG,
-                                INFO,
-                                WARNING_I, WARNING_II, WARNING_III,
-                                ERROR_I, ERROR_II,
-                                LEAVES_I, LEAVES_II};
+  std::string levels[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+  std::string interactions[9] = { DEBUG,
+                                  INFO,
+                                  WARNING_I, WARNING_II, WARNING_III,
+                                  ERROR_I, ERROR_II,
+                                  LEAVES_I, LEAVES_II };
 
   std::cout << std::endl;
 
-  int i = 0;
+  int i = -1;
 
-  while (i < 4)
+  while (++i < 4)
   {
     std::cout << "Harl: " << std::endl << std::endl;
     harl.complain(levels[i]);
@@ -71,7 +71,6 @@ int main( void )
     std::cout << "\nAtendent: " << std::endl;
     atendentResponse(i);
     delay();
-    i++;
   }
 
   atendentResponse(i);
