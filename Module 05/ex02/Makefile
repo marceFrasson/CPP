@@ -10,7 +10,7 @@ SRC = 	AForm.cpp \
 				ShrubberyCreationForm.cpp \
 				ShrubberyCreationForm.hpp
 
-NAME = Form
+NAME = AForm
 
 CC = g++
 
@@ -19,7 +19,7 @@ FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
 	@echo ""
-	@echo "|		Form created		|"
+	@echo "|		AForm created		|"
 	@echo ""
 
 all: $(NAME)
@@ -27,14 +27,15 @@ all: $(NAME)
 clean:
 	@rm -f $(NAME)
 	@echo ""
-	@echo "|		Form deleted		|"
+	@echo "|		AForm deleted		|"
 	@echo ""
 
 fclean:
 	@rm -f $(NAME)
 	@rm -f *.o
+	@rm -f *_shrubbery
 	@echo ""
-	@echo "|		Form deleted		|"
+	@echo "|		AForm deleted		|"
 	@echo ""
 
 re: fclean all

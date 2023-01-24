@@ -1,19 +1,19 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm( void )
-  : AForm( "RobotomyRequestForm", 25, 5 ), _target( "Unknown" )
+  : AForm( "RobotomyRequestForm", 72, 45 ), _target( "Unknown" )
 {
   return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( std::string target )
-  : AForm( "RobotomyRequestForm", 25, 5 ), _target( target )
+  : AForm( "RobotomyRequestForm", 72, 45 ), _target( target )
 {
   return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &source )
-  : AForm( "RobotomyRequestForm", 25, 5 )
+  : AForm( "RobotomyRequestForm", 72, 45 )
 {
   operator=(source);
 

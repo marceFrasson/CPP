@@ -1,19 +1,19 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm( void )
-  : AForm( "ShrubberyCreationForm", 72, 45 ), _target( "Unknown" )
+  : AForm( "ShrubberyCreationForm", 145, 137 ), _target( "Unknown" )
 {
   return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string &target )
-  : AForm( "ShrubberyCreationForm", 72, 45 ), _target( target )
+  : AForm( "ShrubberyCreationForm", 145, 137 ), _target( target )
 {
   return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &source )
-  : AForm( "ShrubberyCreationForm", 72, 45 )
+  : AForm( "ShrubberyCreationForm", 145, 137 )
 {
   operator=(source);
 
