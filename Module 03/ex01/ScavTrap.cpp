@@ -59,6 +59,7 @@ void ScavTrap::attack( const std::string& target )
 
     return ;
   }
+  
   else if (!_energyPoints)
   {
     std::cout << _name << " has no energy points enough to attack." << std::endl;

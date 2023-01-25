@@ -3,7 +3,9 @@
 int main( void )
 {
 
-  FragTrap jhonDoe("Jhon Doe");
+  std::cout << std::endl;
+	
+	FragTrap jhonDoe("Jhon Doe");
 
 	std::cout << std::endl;
 

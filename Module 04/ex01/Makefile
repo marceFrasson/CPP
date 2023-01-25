@@ -1,16 +1,10 @@
 SRC = 	Animal.cpp \
-				Animal.hpp \
 				Brain.cpp \
-				Brain.hpp \
 				Cat.cpp \
-				Cat.hpp \
 				Dog.cpp \
-				Dog.hpp \
 				main.cpp \
 				WrongAnimal.cpp \
-				WrongAnimal.hpp \
-				WrongCat.cpp \
-				WrongCat.hpp
+				WrongCat.cpp
 
 NAME = Animal
 

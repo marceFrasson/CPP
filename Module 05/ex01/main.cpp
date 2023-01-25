@@ -6,7 +6,7 @@
 /*   By: mfrasson <mfrasson@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 02:23:51 by mmoreira          #+#    #+#             */
-/*   Updated: 2023/01/21 06:07:26 by mfrasson         ###   ########.fr       */
+/*   Updated: 2023/01/25 20:00:42 by mfrasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main( void )
 	{
 		std::cout << ex.what() << std::endl;
 	}
+
 	try
 	{
 		Form graduation("Graduation", 2, -12);
@@ -33,6 +34,7 @@ int	main( void )
 	{
 		std::cout << ex.what() << std::endl;
 	}
+
 	try
 	{
 		Form graduation("Graduation", 0, 0);
@@ -51,6 +53,7 @@ int	main( void )
 	{
 		std::cout << ex.what() << std::endl;
 	}
+
 	try
 	{
 		Form graduation("Graduation", 145, 160);
@@ -59,6 +62,7 @@ int	main( void )
 	{
 		std::cout << ex.what() << std::endl;
 	}
+
 	try
 	{
 		Form graduation("Graduation", 151, 151);
@@ -67,6 +71,7 @@ int	main( void )
 	{
 		std::cout << ex.what() << std::endl;
 	}
+	
 	std::cout << std::endl;
 
 	try

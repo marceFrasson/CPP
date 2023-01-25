@@ -26,8 +26,8 @@ Intern &Intern::operator=( const Intern &rightHandSide )
 
 AForm *Intern::makeForm( std::string name, std::string target )
 {
-  AForm *(Intern::*makeAForm[TOTAL_FORMS])
-                (std::string target) = { &Intern::_makePresidentialPardonForm,
+  AForm *( Intern::*makeAForm[TOTAL_FORMS] )
+              ( std::string target ) = { &Intern::_makePresidentialPardonForm,
                                          &Intern::_makeRobotomyRequestForm,
                                          &Intern::_makeShrubberyCreationForm };
 

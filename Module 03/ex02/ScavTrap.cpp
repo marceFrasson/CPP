@@ -11,7 +11,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap( )
   return ;
 }
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap( std::string name ) : ClapTrap( name )
 {
   _hitPoints = 100;
   _energyPoints = 50;
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
   return ;
 }
 
-ScavTrap::ScavTrap( const ScavTrap &source ) : ClapTrap(source)
+ScavTrap::ScavTrap( const ScavTrap &source ) : ClapTrap( source )
 {
   std::cout << "ScavTrap " << _name << " copied!" << std::endl;
 
@@ -61,6 +61,7 @@ void ScavTrap::attack( const std::string& target )
 
     return ;
   }
+  
   else if (!_energyPoints)
   {
     std::cout << _name << " has no energy points enough to attack." << std::endl;

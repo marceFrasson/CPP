@@ -1,10 +1,7 @@
 SRC = 	ClapTrap.cpp \
-				ClapTrap.hpp \
 				FragTrap.cpp \
-				FragTrap.hpp \
 				main.cpp \
-				ScavTrap.cpp \
-				ScavTrap.hpp
+				ScavTrap.cpp
 
 NAME = FragTrap
 

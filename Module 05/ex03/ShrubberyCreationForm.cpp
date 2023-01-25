@@ -25,7 +25,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void )
   return ;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=( const ShrubberyCreationForm &rightHandSide )
+ShrubberyCreationForm &ShrubberyCreationForm::operator=
+                          ( const ShrubberyCreationForm &rightHandSide )
 {
   if (this != &rightHandSide)
     _target = rightHandSide._target;

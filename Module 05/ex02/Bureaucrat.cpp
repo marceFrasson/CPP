@@ -10,6 +10,7 @@ Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name( name )
 {
   if (grade < 1)
     throw GradeTooHighException();
+  
   else if (grade > 150)
     throw GradeTooLowException();
   
@@ -57,6 +58,7 @@ void Bureaucrat::upGrade( void )
     if (_grade < 1)
       throw GradeTooHighException();
   }
+
   catch (const std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -72,6 +74,7 @@ void Bureaucrat::downGrade( void )
     if (_grade > 150)
       throw GradeTooLowException();
   }
+
   catch (const std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -84,6 +87,7 @@ void Bureaucrat::signForm( AForm &form )
   {
     form.beSigned(*this);
   }
+
   catch (const std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -96,6 +100,7 @@ void Bureaucrat::executeForm(const AForm &form)
   {
     form.execute(*this);
   }
+  
   catch (const std::exception &exception)
   {
     std::cerr << _name << " did not execute " << form.getName()

@@ -56,6 +56,7 @@ void Bureaucrat::upGrade( void )
     if (_grade < 1)
       throw GradeTooHighException();
   }
+
   catch (const std:: exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -71,6 +72,7 @@ void Bureaucrat::downGrade( void )
     if (_grade > 150)
       throw GradeTooLowException();
   }
+  
   catch (const std:: exception &exception)
   {
     std::cerr << exception.what() << std::endl;

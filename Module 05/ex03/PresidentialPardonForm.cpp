@@ -12,7 +12,8 @@ PresidentialPardonForm::PresidentialPardonForm( std::string target )
   return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &source )
+PresidentialPardonForm::PresidentialPardonForm
+                          ( const PresidentialPardonForm &source )
   : AForm( "PresidentialPardon", 25, 5 )
 {
   operator=(source);
@@ -25,7 +26,8 @@ PresidentialPardonForm::~PresidentialPardonForm( void )
   return ;
 }
 
-PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPardonForm &rightHandSide )
+PresidentialPardonForm &PresidentialPardonForm::operator=
+                                ( const PresidentialPardonForm &rightHandSide )
 {
   if (this != &rightHandSide)
     _target = rightHandSide._target;

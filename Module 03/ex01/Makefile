@@ -1,8 +1,6 @@
 SRC = 	ClapTrap.cpp \
-				ClapTrap.hpp \
 				main.cpp \
-				ScavTrap.cpp \
-				ScavTrap.hpp
+				ScavTrap.cpp
 
 NAME = ScavTrap
 

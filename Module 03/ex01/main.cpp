@@ -3,6 +3,8 @@
 int main( void )
 {
 
+	std::cout << std::endl;
+
   ScavTrap jhonDoe("Jhon Doe");
 
 	std::cout << std::endl;
