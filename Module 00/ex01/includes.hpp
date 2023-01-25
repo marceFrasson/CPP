@@ -9,6 +9,6 @@
 #define LAST_PAGE   1
 #define ASK_AGAIN  -1
 
-void	printMenu(void);
+void printMenu(void);
 
 #endif

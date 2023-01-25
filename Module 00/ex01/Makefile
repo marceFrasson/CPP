@@ -1,8 +1,4 @@
-SRC = 	Contact.class.hpp \
-				Contact.cpp \
-				includeLibs.hpp \
-				includes.hpp \
-				PhoneBook.class.hpp \
+SRC = 	Contact.cpp \
 				phonebook.cpp \
 				PhoneBook.cpp
 

@@ -1,9 +1,10 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB( std::string name )
+HumanB::HumanB( std::string name ) : _weapon( NULL )
 {
   _name = name;
-  _weapon = NULL;
+  
+  return ;
 }
 
 HumanB::~HumanB( void )

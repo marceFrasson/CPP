@@ -10,7 +10,7 @@ NAME = FragTrap
 
 CC = g++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror
+FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
 
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $(NAME)

@@ -46,11 +46,13 @@ void atendentResponse( int i )
 void delay( void )
 {
   std::cout << std::endl;
+  
   usleep(1000000);
 }
 
 int main( void )
 {
+
   Harl harl;
   std::string levels[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
   std::string interactions[9] = { DEBUG,
@@ -76,4 +78,5 @@ int main( void )
   atendentResponse(i);
 
   return (0);
+
 }

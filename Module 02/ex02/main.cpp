@@ -2,6 +2,9 @@
 
 int main( void )
 {
+
+  std::cout << std::endl;
+
   Fixed       a;
   Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
@@ -14,5 +17,8 @@ int main( void )
 
   std::cout << Fixed::max( a, b ) << std::endl;
 
+  std::cout << std::endl;
+
   return 0;
+
 }

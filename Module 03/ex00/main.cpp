@@ -3,7 +3,9 @@
 int main( void )
 {
 
-  ClapTrap jhonDoe("Jhon Doe");
+  std::cout << std::endl;
+	
+	ClapTrap jhonDoe("Jhon Doe");
 
 	std::cout << std::endl;
 

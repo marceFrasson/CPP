@@ -1,16 +1,16 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie( std::string name )
+Zombie::Zombie( std::string name ) : _name( name )
 {
-  _name = name;
+  return ;
 }
 
-Zombie::~Zombie(void)
+Zombie::~Zombie( void )
 {
   std::cout << "Zombie " << _name << " destroyed" << std::endl;
 }
 
-void Zombie::annouce(void)
+void Zombie::annouce( void )
 {
   std::cout << _name << ":  BraiiiiiiinnnzzzZ..." << std::endl;
 }

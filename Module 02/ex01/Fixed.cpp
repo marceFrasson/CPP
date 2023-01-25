@@ -2,11 +2,9 @@
 
 const int Fixed::_fractionalBits = 8;
 
-Fixed::Fixed( void )
+Fixed::Fixed( void ) : _rawBits( 0 )
 {
   std::cout << "Default constructor called" << std::endl;
-
-  setRawBits(0);
 
   return ;
 }

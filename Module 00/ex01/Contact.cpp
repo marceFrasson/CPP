@@ -10,90 +10,100 @@ Contact::~Contact( void )
   return ;
 }
 
-void Contact::setIndex(int index)
+void Contact::setIndex( int index )
 {
   if (index < 8)
-    this->index = index + 1;
+    _index = index + 1;
   else
-    this->index = index % 8;
+    _index = index % 8;
 }
 
-void Contact::setFirstName(void)
+void Contact::setFirstName( void )
 {
   std::string input;
 
   input = "";
+
   while (input == "")
-    std::getline( std::cin, input );
-  this->firstName = input;
+    std::getline(std::cin, input);
+  
+  _firstName = input;
 }
 
-void Contact::setLastName(void)
+void Contact::setLastName( void )
 {
   std::string input;
 
   input = "";
+
   while (input == "")
-    std::getline( std::cin, input );
-  this->lastName = input;
+    std::getline(std::cin, input);
+
+  _lastName = input;
 }
 
-void Contact::setNickname(void)
+void Contact::setNickname( void )
 {
   std::string input;
 
   input = "";
+
   while (input == "")
-    std::getline( std::cin, input );
-  this->nickname = input;
+    std::getline(std::cin, input);
+    
+  _nickname = input;
 }
 
-void Contact::setPhoneNumber(void)
+void Contact::setPhoneNumber( void )
 {
   std::string input;
 
   input = "";
+
   while (input == "")
-    std::getline( std::cin, input );
-  this->phoneNumber = input;
+    std::getline(std::cin, input);
+    
+  _phoneNumber = input;
 }
 
-void Contact::setDarkestSecret(void)
+void Contact::setDarkestSecret( void )
 {
   std::string input;
 
   input = "";
+
   while (input == "")
-    std::getline( std::cin, input );
-  this->darkestSecret = input;
+    std::getline(std::cin, input);
+    
+  _darkestSecret = input;
 }
 
-int Contact::getIndex(void)
+int Contact::getIndex( void )
 {
-  return (this->index);
+  return (_index);
 }
 
-std::string Contact::getFirstName(void)
+std::string Contact::getFirstName( void )
 {
-  return (this->firstName);
+  return (_firstName);
 }
 
-std::string Contact::getLastName(void)
+std::string Contact::getLastName( void )
 {
-  return (this->lastName);
+  return (_lastName);
 }
 
-std::string Contact::getNickname(void)
+std::string Contact::getNickname( void )
 {
-  return (this->nickname);
+  return (_nickname);
 }
 
-std::string Contact::getPhoneNumber(void)
+std::string Contact::getPhoneNumber( void )
 {
-  return (this->phoneNumber);
+  return (_phoneNumber);
 }
 
-std::string Contact::getDarkestSecret(void)
+std::string Contact::getDarkestSecret( void )
 {
-  return (this->darkestSecret);
+  return (_darkestSecret);
 }

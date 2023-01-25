@@ -1,5 +1,4 @@
-SRC = 	main.cpp \
-				includes.hpp
+SRC = 	main.cpp
 
 NAME = replace
 
@@ -25,6 +24,7 @@ clean:
 fclean:
 	@rm -f $(NAME)
 	@rm -f *.o
+	@rm -f *.replace
 	@echo ""
 	@echo "|		replace deleted		|"
 	@echo ""

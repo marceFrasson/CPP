@@ -22,6 +22,7 @@
 
 class Harl
 {
+  
   private:
 
     typedef void(Harl::*functionPointer)( void );

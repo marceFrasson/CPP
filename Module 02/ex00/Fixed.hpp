@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class Fixed {
+class Fixed
+{
 
   private:
 

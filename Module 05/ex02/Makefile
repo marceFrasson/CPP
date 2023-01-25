@@ -1,14 +1,9 @@
 SRC = 	AForm.cpp \
-				AForm.hpp \
 				Bureaucrat.cpp \
-				Bureaucrat.hpp \
 				main.cpp \
 				PresidentialPardonForm.cpp \
-				PresidentialPardonForm.hpp \
 				RobotomyRequestForm.cpp \
-				RobotomyRequestForm.hpp \
-				ShrubberyCreationForm.cpp \
-				ShrubberyCreationForm.hpp
+				ShrubberyCreationForm.cpp
 
 NAME = AForm
 

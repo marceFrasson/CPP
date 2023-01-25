@@ -2,10 +2,8 @@
 
 const int Fixed::_fractionalBits = 8;
 
-Fixed::Fixed( void )
+Fixed::Fixed( void ) : _rawBits( 0 )
 {
-  setRawBits(0);
-
   return ;
 }
 
@@ -23,7 +21,7 @@ Fixed::Fixed( const int intValue )
 
 Fixed::Fixed( const float floatValue )
 {
-  setRawBits((int)(floatValue * (1 << _fractionalBits) ));
+  setRawBits((int)(floatValue * (1 << _fractionalBits)));
 }
 
 Fixed::~Fixed( void )
@@ -61,7 +59,8 @@ Fixed Fixed::operator*( Fixed const &rightHandSide ) const
 {
   Fixed temp;
 
-  temp.setRawBits((getRawBits() * rightHandSide.getRawBits()) >> _fractionalBits);
+  temp.setRawBits((getRawBits() * rightHandSide.getRawBits())
+                                              >> _fractionalBits);
   
   return (temp);
 }
@@ -70,7 +69,8 @@ Fixed Fixed::operator/( Fixed const &rightHandSide ) const
 {
   Fixed temp;
 
-  temp.setRawBits((getRawBits() / rightHandSide.getRawBits()) << _fractionalBits);
+  temp.setRawBits((getRawBits() / rightHandSide.getRawBits())
+                                              << _fractionalBits);
   
   return (temp);
 }

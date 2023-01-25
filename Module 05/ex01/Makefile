@@ -1,7 +1,5 @@
 SRC = 	Bureaucrat.cpp \
-				Bureaucrat.hpp \
 				Form.cpp \
-				Form.hpp \
 				main.cpp
 
 NAME = Form

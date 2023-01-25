@@ -6,23 +6,29 @@
 
 class PhoneBook
 {
+
   private:
 
-    Contact contacts[8];
-    int numberOfContacts;
+    Contact _contacts[8];
+    int     _numberOfContacts;
 
   public:
   
     PhoneBook( void );
     ~PhoneBook( void );
 
-    void  addContact(PhoneBook phoneBook);
-    int   searchContact(PhoneBook phoneBook);
-    void  printIndex(int index);
-    void  printColumn(std::string stringToPrint);
-    int   checkNextStep(std::string nextStep, int *currentPage);
-    int   findOutIndex(PhoneBook phoneBook);
-    void  formmatToPrint(Contact contact);  
+    void  addContact( PhoneBook phoneBook );
+    int   searchContact( PhoneBook phoneBook );
+
+    int   findOutIndex( PhoneBook phoneBook );
+    int   checkNextStep( std::string nextStep, int *currentPage );
+    void  nextPage( int &i, int &currentPage, int &endOfPage, int numberOfContacts );
+
+    void  formmatToPrint( Contact contact );
+    void  printIndex( int index );
+    void  printColumn( std::string stringToPrint );
+    void  printPhoneBook( int i, PhoneBook phoneBook );
+
 };
 
 #endif

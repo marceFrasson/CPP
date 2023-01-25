@@ -6,7 +6,8 @@ void writeOutputFile( std::ofstream &fileOut, std::string text )
   fileOut.close();
 }
 
-void replaceStrings( std::string &text, std::string stringToBeReplaced, std::string stringToReplace )
+void replaceStrings( std::string &text, std::string stringToBeReplaced,
+                          std::string stringToReplace )
 {
   size_t i = 0;
 
@@ -28,16 +29,19 @@ void readFile( std::ifstream &fileIn, std::string &text )
 	fileIn.close();
 }
 
-int openFiles( const char *fileName, std::ifstream &fileIn, std::ofstream &fileOut )
+int openFiles( const char *fileName, std::ifstream &fileIn,
+                     std::ofstream &fileOut )
 {
   std::string   outFileName;
 
   outFileName = (std::string)fileName + ".replace";
   
   fileIn.open(fileName);
+
   if (!fileIn)
   {
       std::cout << "\nError opening input file.\n" << std::endl;
+
       return (1);
   }
 
@@ -45,6 +49,7 @@ int openFiles( const char *fileName, std::ifstream &fileIn, std::ofstream &fileO
   if (!fileOut)
   {
       std::cout << "\nError opening output file.\n" << std::endl;
+
       return (1);
   }
 
@@ -56,13 +61,16 @@ int checkArgs( int argc, char *argv[] )
   if (argc != 4)
   {
     std::cout << "\nInvalid number of arguments." << std::endl;
-    std::cout << "Usage: ./replace <filename> <stringToBeReplaced> <stringToReplace>\n" << std::endl;
+    std::cout << "Usage: ./replace <filename> ";
+    std::cout << "<stringToBeReplaced> <stringToReplace>\n" << std::endl;
+
     return (1);
   }
 
   if (argv[2] == argv[3])
   {
     std::cout << "\nBoth strings are equal. Nothing to replace.\n" << std::endl;
+
     return (1);
   }
 
@@ -71,6 +79,7 @@ int checkArgs( int argc, char *argv[] )
 
 int main( int argc, char *argv[] )
 {
+
   std::ifstream fileIn;
   std::ofstream fileOut;
   std::string   stringToBeReplaced;
@@ -91,4 +100,5 @@ int main( int argc, char *argv[] )
   writeOutputFile( fileOut, text );
 
   return (0);
+
 }

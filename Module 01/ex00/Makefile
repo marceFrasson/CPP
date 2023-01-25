@@ -1,8 +1,7 @@
 SRC = 	main.cpp \
 				newZombie.cpp \
 				randomChump.cpp \
-				Zombie.cpp \
-				Zombie.hpp
+				Zombie.cpp
 
 NAME = zombie
 
