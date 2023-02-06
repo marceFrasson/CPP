@@ -1,8 +1,8 @@
 #include "iter.hpp"
 
-void printElement( int i )
+void printElement( int n )
 {
-  std::cout << i << " ";
+  std::cout << n << " ";
 }
 
 int main( void )
