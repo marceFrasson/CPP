@@ -2,7 +2,6 @@
 #include <vector>
 #include <deque>
 #include <list>
-#include <set>
 
 int main()
 {
@@ -97,37 +96,6 @@ int main()
     {  
       deqIterator = easyfind(deq, 8);
       std::cout << "found: " << *deqIterator << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-      std::cerr << e.what() << '\n';
-    }
-  }
-
-  {
-    std::cout << std::endl << "set" << std::endl;
-
-    std::set<int> set(array, array + (sizeof(array) / sizeof(*array)));
-    std::set<int>::iterator setIterator;
-
-    std::cout << std::endl << "easyfind 3" << std::endl;
-
-    try
-    {  
-      setIterator = easyfind(set, 3);
-      std::cout << "found: " << *setIterator << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-      std::cerr << e.what() << '\n';
-    }
-    
-    std::cout << std::endl << "easyfind 1" << std::endl;
-
-    try
-    {  
-      setIterator = easyfind(set, 1);
-      std::cout << "found: " << *setIterator << std::endl;
     }
     catch(const std::exception& e)
     {

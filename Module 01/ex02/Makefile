@@ -4,7 +4,7 @@ NAME = string
 
 CC = g++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic 
+FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 
 
 $(NAME): $(SRC)
