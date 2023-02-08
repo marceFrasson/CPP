@@ -1,5 +1,4 @@
 SRC = 	Bureaucrat.cpp \
-				Bureaucrat.hpp \
 				main.cpp
 
 NAME = Bureaucrat

@@ -1,5 +1,4 @@
 SRC = 	Fixed.cpp \
-				Fixed.hpp \
 				main.cpp
 
 

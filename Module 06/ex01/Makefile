@@ -1,6 +1,5 @@
 SRC = 	main.cpp \
-				Data.cpp \
-				Data.hpp 
+				Data.cpp
 
 
 NAME = Serialization
