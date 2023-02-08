@@ -188,7 +188,7 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Test with random Span(1000)" << std::endl << std::endl;
+		std::cout << "Test with random Span(10000)" << std::endl << std::endl;
 
 		std::cout << "min interval: " << sp.shortestSpan() << std::endl;
 		std::cout << "max interval: " << sp.longestSpan() << std::endl;
@@ -205,7 +205,7 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Test with random Span(10000)" << std::endl << std::endl;
+		std::cout << "Test with random Span(100000)" << std::endl << std::endl;
 
 		std::cout << "min interval: " << sp.shortestSpan() << std::endl;
 		std::cout << "max interval: " << sp.longestSpan() << std::endl;
@@ -222,7 +222,7 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Test with random Span(100000)" << std::endl << std::endl;
+		std::cout << "Test with random Span(1000000)" << std::endl << std::endl;
     
 		std::cout << "min interval: " << sp.shortestSpan() << std::endl;
 		std::cout << "max interval: " << sp.longestSpan() << std::endl;
