@@ -1,6 +1,5 @@
 SRC = 	main.cpp \
 				Zombie.cpp \
-				Zombie.hpp \
 				zombieHorde.cpp
 
 NAME = zombie

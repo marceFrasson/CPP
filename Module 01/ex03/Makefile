@@ -1,10 +1,7 @@
 SRC = 	HumanA.cpp \
-				HumanA.hpp \
 				HumanB.cpp \
-				HumanB.hpp \
 				main.cpp \
-				Weapon.cpp \
-				Weapon.hpp
+				Weapon.cpp
 
 
 NAME = violence

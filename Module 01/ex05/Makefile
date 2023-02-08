@@ -1,5 +1,4 @@
 SRC = 	Harl.cpp \
-				Harl.hpp \
 				main.cpp
 
 NAME = Harl
