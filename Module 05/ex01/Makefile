@@ -4,7 +4,7 @@ SRC = 	Bureaucrat.cpp \
 
 NAME = Form
 
-CC = g++
+CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
 

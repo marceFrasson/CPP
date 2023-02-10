@@ -87,8 +87,6 @@ int main( void )
       ++it;
     }
 
-    // std::stack<int> s(mstack);
-
     std::cout << std::endl;
 
     std::cout << "\n}\n" << std::endl;

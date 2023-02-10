@@ -4,7 +4,7 @@ SRC = 	Contact.cpp \
 
 NAME = phonebook
 
-CC = g++
+CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic 
 

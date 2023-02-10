@@ -4,7 +4,7 @@ SRC = 	main.cpp \
 
 NAME = zombie
 
-CC = g++
+CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 

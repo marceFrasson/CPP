@@ -5,7 +5,7 @@ SRC = 	Fixed.cpp \
 
 NAME = Fixed
 
-CC = g++
+CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic 
 
