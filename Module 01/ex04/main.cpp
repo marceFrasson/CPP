@@ -41,7 +41,7 @@ int openFiles( const char *fileName, std::ifstream &fileIn,
 
   if (!fileIn)
   {
-      std::cout << "\nError opening input file.\n" << std::endl;
+      std::cout << "\nerror: opening input file\n" << std::endl;
 
       return (1);
   }
@@ -49,7 +49,7 @@ int openFiles( const char *fileName, std::ifstream &fileIn,
   fileOut.open(outFileName.c_str());
   if (!fileOut)
   {
-      std::cout << "\nError opening output file.\n" << std::endl;
+      std::cout << "\nerror: opening output file\n" << std::endl;
 
       return (1);
   }
