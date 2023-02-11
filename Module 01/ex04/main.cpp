@@ -1,4 +1,5 @@
 #include "includes.hpp"
+#include <string.h>
 
 void writeOutputFile( std::ofstream &fileOut, std::string text )
 {
@@ -70,6 +71,20 @@ int checkArgs( int argc, char *argv[] )
   if (argv[2] == argv[3])
   {
     std::cout << "\nBoth strings are equal. Nothing to replace.\n" << std::endl;
+
+    return (1);
+  }
+
+  if (!strcmp(argv[2], "") && strcmp(argv[3], ""))
+  {
+    std::cout << "\nerror: empty stringToBeReplaced\n" << std::endl;
+
+    return (1);
+  }
+
+  if (!strcmp(argv[2], "") && !strcmp(argv[3], ""))
+  {
+    std::cout << "\nerror: empty stringToBeReplaced and stringToReplace\n" << std::endl;
 
     return (1);
   }
