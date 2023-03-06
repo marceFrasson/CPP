@@ -29,11 +29,8 @@ Fixed &Fixed::operator=( const Fixed &rightHandSide )
 {
   std::cout << "Copy assignment operator called" << std::endl;
 
-  if (this == &rightHandSide)
-    return *this;
-
-  setRawBits(getRawBits());
-
+  _rawBits = rightHandSide.getRawBits();
+  
   return *this;
 }
 

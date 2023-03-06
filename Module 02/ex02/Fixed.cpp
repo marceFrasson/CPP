@@ -31,10 +31,9 @@ Fixed::~Fixed( void )
 
 Fixed &Fixed::operator=( const Fixed &rightHandSide )
 {
-  if (this != &rightHandSide)
-    setRawBits(rightHandSide.getRawBits());
-
-  return (*this);
+  _rawBits = rightHandSide.getRawBits();
+  
+  return *this;
 }
 
 Fixed Fixed::operator+( Fixed const &rightHandSide ) const
