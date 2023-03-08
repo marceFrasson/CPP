@@ -15,18 +15,22 @@ RPNCalculator::~RPNCalculator( void )
   return ;
 }
 
-RPNCalculator &RPNCalculator::operator=( const RPNCalculator &rhs )
-{
-  *this = rhs;
+// RPNCalculator &RPNCalculator::operator=( const RPNCalculator &rhs )
+// {
+//   if (this != &rhs)
+//     *this = rhs;
 
-  return (*this);
-}
+//   return (*this);
+// }
 
 double RPNCalculator::evaluate( std::string expression )
 {
-  if (expression.find('(') != std::string::npos || expression.find(')') != std::string::npos
-    || expression.find('[') != std::string::npos || expression.find(']') != std::string::npos)
-    throw Error();
+  for (std::string::size_type i = 0; i < expression.size(); ++i)
+  {
+    char c = expression[i];
+    if (!isdigit(c) && c != ' ' && c != '+' && c != '-' && c != '*' && c != '/')
+      throw Error();
+  }
 
   std::stack<double>  operandStack;
   std::stringstream   stringStream(expression);
@@ -36,6 +40,9 @@ double RPNCalculator::evaluate( std::string expression )
   {
     if (token == "+" || token == "-" || token == "*" || token == "/")
     {
+      if (operandStack.size() < 2)
+        throw Error();
+
       double rhs = operandStack.top();
       operandStack.pop();
       double lhs = operandStack.top();
