@@ -34,10 +34,10 @@ AForm::~AForm( void )
   return ;
 }
 
-AForm &AForm::operator=( const AForm &rightHandSide )
+AForm &AForm::operator=( const AForm &rhs )
 {
-  if (this != &rightHandSide)
-    _signed = rightHandSide.isSigned();
+  if (this != &rhs)
+    _signed = rhs.isSigned();
 
   return (*this);
 }

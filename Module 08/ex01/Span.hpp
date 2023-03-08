@@ -22,7 +22,7 @@ class Span
     Span( const Span &source );
     ~Span( void );
 
-    Span &operator=( const Span &rightHandSide );
+    Span &operator=( const Span &rhs );
 
     void addNumber( int number );
     void addNumbers( vector::iterator firstNumber, vector::iterator lastNumber );

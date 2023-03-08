@@ -20,7 +20,7 @@ class ClapTrap
     ClapTrap( const ClapTrap &copy );
     ~ClapTrap( void );
     
-    ClapTrap &operator=( const ClapTrap &rightHandSide );
+    ClapTrap &operator=( const ClapTrap &rhs );
 
     void attack( const std::string& target );
     void takeDamage( unsigned int amount );

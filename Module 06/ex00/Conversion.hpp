@@ -45,7 +45,7 @@ class Conversion
     Conversion( const Conversion &source );
     ~Conversion( void );
 
-    Conversion &operator=( const Conversion &rightHandSide );
+    Conversion &operator=( const Conversion &rhs );
 
     void print( void );
 

@@ -27,17 +27,17 @@ Conversion::~Conversion( void )
   return ;
 }
 
-Conversion &Conversion::operator=( const Conversion &rightHandSide )
+Conversion &Conversion::operator=( const Conversion &rhs )
 {
-  if (this != &rightHandSide)
+  if (this != &rhs)
   {
-    _string = rightHandSide._string;
-    _char = rightHandSide._char;
-    _int = rightHandSide._int;
-    _float = rightHandSide._float;
-    _double = rightHandSide._double;
-    _nan = rightHandSide._nan;
-    _nan = rightHandSide._nan;
+    _string = rhs._string;
+    _char = rhs._char;
+    _int = rhs._int;
+    _float = rhs._float;
+    _double = rhs._double;
+    _nan = rhs._nan;
+    _nan = rhs._nan;
   }
 
   return (*this);

@@ -14,10 +14,10 @@ class MutantStack : public std::stack< T, container >
     MutantStack( const MutantStack &source ) : std::stack< T, container >( source ) {};
     ~MutantStack( void ) {};
 
-    MutantStack &operator=( const MutantStack &rightHandSide )
+    MutantStack &operator=( const MutantStack &rhs )
     {
-      if (this != *rightHandSide)
-        std::stack<T, container>::operator=(rightHandSide);
+      if (this != *rhs)
+        std::stack<T, container>::operator=(rhs);
       
       return (*this);
     }

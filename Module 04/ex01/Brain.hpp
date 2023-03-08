@@ -15,7 +15,7 @@ class Brain
     Brain( const Brain &source );
     ~Brain( void );
 
-    Brain &operator=( const Brain &rightHandSide );
+    Brain &operator=( const Brain &rhs );
 
 };
 

@@ -25,10 +25,10 @@ RobotomyRequestForm::~RobotomyRequestForm( void )
   return ;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator=( const RobotomyRequestForm &rightHandSide )
+RobotomyRequestForm &RobotomyRequestForm::operator=( const RobotomyRequestForm &rhs )
 {
-  if (this != &rightHandSide)
-    _target = rightHandSide._target;
+  if (this != &rhs)
+    _target = rhs._target;
 
   return (*this);
 }

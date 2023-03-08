@@ -23,10 +23,10 @@ Cat::~Cat( void )
   return ;
 }
 
-Cat &Cat::operator=( const Cat &rightHandSide )
+Cat &Cat::operator=( const Cat &rhs )
 {
-  if (this != &rightHandSide)
-    _type = rightHandSide._type;
+  if (this != &rhs)
+    _type = rhs._type;
   
   return (*this);
 }

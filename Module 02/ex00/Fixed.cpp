@@ -25,11 +25,11 @@ Fixed::~Fixed( void )
   return ;
 }
 
-Fixed &Fixed::operator=( const Fixed &rightHandSide )
+Fixed &Fixed::operator=( const Fixed &rhs )
 {
   std::cout << "Copy assignment operator called" << std::endl;
 
-  _rawBits = rightHandSide.getRawBits();
+  _rawBits = rhs.getRawBits();
   
   return *this;
 }

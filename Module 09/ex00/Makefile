@@ -25,7 +25,6 @@ clean:
 fclean:
 	@rm -f $(NAME)
 	@rm -f *.o
-	@rm -f *_shrubbery
 	@echo ""
 	@echo "|		btc deleted		|"
 	@echo ""

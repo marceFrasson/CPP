@@ -21,7 +21,7 @@ class AForm
     AForm( const AForm &source );
     virtual ~AForm( void );
 
-    AForm &operator=( const AForm &rightHandSide );
+    AForm &operator=( const AForm &rhs );
 
     std::string getName( void ) const;
     bool isSigned( void ) const;

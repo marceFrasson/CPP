@@ -38,15 +38,15 @@ FragTrap::~FragTrap( void )
   return ;
 }
 
-FragTrap &FragTrap::operator=( const FragTrap &rightHandSide )
+FragTrap &FragTrap::operator=( const FragTrap &rhs )
 {
   std::cout << "FragTrap " << _name << " assigned copied!" << std::endl;
 
-  if (this != &rightHandSide)
+  if (this != &rhs)
   {
-    _hitPoints = rightHandSide._hitPoints;
-    _energyPoints = rightHandSide._energyPoints;
-    _attackDamage = rightHandSide._attackDamage;
+    _hitPoints = rhs._hitPoints;
+    _energyPoints = rhs._energyPoints;
+    _attackDamage = rhs._attackDamage;
   }
 
   return (*this);

@@ -29,79 +29,79 @@ Fixed::~Fixed( void )
   return ;
 }
 
-Fixed &Fixed::operator=( const Fixed &rightHandSide )
+Fixed &Fixed::operator=( const Fixed &rhs )
 {
-  _rawBits = rightHandSide.getRawBits();
+  _rawBits = rhs.getRawBits();
   
   return *this;
 }
 
-Fixed Fixed::operator+( Fixed const &rightHandSide ) const
+Fixed Fixed::operator+( Fixed const &rhs ) const
 {
   Fixed temp;
 
-  temp.setRawBits(getRawBits() + rightHandSide.getRawBits());
+  temp.setRawBits(getRawBits() + rhs.getRawBits());
 
   return (temp);
 }
 
-Fixed Fixed::operator-( Fixed const &rightHandSide ) const
+Fixed Fixed::operator-( Fixed const &rhs ) const
 {
   Fixed temp;
 
-  temp.setRawBits(getRawBits() - rightHandSide.getRawBits());
+  temp.setRawBits(getRawBits() - rhs.getRawBits());
   
   return (temp);
 }
 
-Fixed Fixed::operator*( Fixed const &rightHandSide ) const
+Fixed Fixed::operator*( Fixed const &rhs ) const
 {
   Fixed temp;
 
-  temp.setRawBits((getRawBits() * rightHandSide.getRawBits())
+  temp.setRawBits((getRawBits() * rhs.getRawBits())
                                               >> _fractionalBits);
   
   return (temp);
 }
 
-Fixed Fixed::operator/( Fixed const &rightHandSide ) const
+Fixed Fixed::operator/( Fixed const &rhs ) const
 {
   Fixed temp;
 
-  temp.setRawBits((getRawBits() / rightHandSide.getRawBits())
+  temp.setRawBits((getRawBits() / rhs.getRawBits())
                                               << _fractionalBits);
   
   return (temp);
 }
 
-bool Fixed::operator>( Fixed const &rightHandSide ) const
+bool Fixed::operator>( Fixed const &rhs ) const
 {
-  return (getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rhs.getRawBits());
 }
 
-bool Fixed::operator<( Fixed const &rightHandSide ) const
+bool Fixed::operator<( Fixed const &rhs ) const
 {
-  return (getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rhs.getRawBits());
 }
 
-bool Fixed::operator>=( Fixed const &rightHandSide ) const
+bool Fixed::operator>=( Fixed const &rhs ) const
 {
-  return (getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rhs.getRawBits());
 }
 
-bool Fixed::operator<=( Fixed const &rightHandSide ) const
+bool Fixed::operator<=( Fixed const &rhs ) const
 {
-  return (getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rhs.getRawBits());
 }
 
-bool Fixed::operator==( Fixed const &rightHandSide ) const
+bool Fixed::operator==( Fixed const &rhs ) const
 {
-  return (getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rhs.getRawBits());
 }
 
-bool Fixed::operator!=( Fixed const &rightHandSide ) const
+bool Fixed::operator!=( Fixed const &rhs ) const
 {
-  return (getRawBits() > rightHandSide.getRawBits());
+  return (getRawBits() > rhs.getRawBits());
 }
 
 Fixed &Fixed::operator++( void )

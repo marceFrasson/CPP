@@ -20,20 +20,20 @@ class Array
 
     unsigned int size( void ) const { return (_size); };
 
-    Array &operator=( const Array &rightHandSide )
+    Array &operator=( const Array &rhs )
     {
-      if (this != &rightHandSide)
+      if (this != &rhs)
       {
         delete[] _array;
         
-        _size = rightHandSide._size;
+        _size = rhs._size;
         _array = new T[_size];
         
         unsigned int i = 0;
 
         while (i < _size)
         {
-          _array[i] = rightHandSide._array[i];
+          _array[i] = rhs._array[i];
           i++;
         }
       }

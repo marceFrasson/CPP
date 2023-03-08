@@ -26,10 +26,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void )
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=
-                          ( const ShrubberyCreationForm &rightHandSide )
+                          ( const ShrubberyCreationForm &rhs )
 {
-  if (this != &rightHandSide)
-    _target = rightHandSide._target;
+  if (this != &rhs)
+    _target = rhs._target;
 
   return (*this);
 }

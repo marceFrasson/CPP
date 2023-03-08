@@ -23,10 +23,10 @@ Span::~Span( void )
   return ;
 }
 
-Span &Span::operator=( const Span &rightHandSide )
+Span &Span::operator=( const Span &rhs )
 {
-  if (this != &rightHandSide)
-    _size = rightHandSide._size;
+  if (this != &rhs)
+    _size = rhs._size;
 
   return (*this);
 }

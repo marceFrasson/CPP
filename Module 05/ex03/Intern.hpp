@@ -23,7 +23,7 @@ class Intern
     Intern( const Intern &source );
     ~Intern( void );
 
-    Intern &operator=( const Intern &rightHandSide );
+    Intern &operator=( const Intern &rhs );
 
     AForm *makeForm( std::string name, std::string target );
 

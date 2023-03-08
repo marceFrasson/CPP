@@ -21,7 +21,7 @@ class Form
     Form( const Form &source );
     ~Form( void );
 
-    Form &operator=( const Form &rightHandSide );
+    Form &operator=( const Form &rhs );
 
     std::string getName( void ) const;
     bool isSigned( void ) const;

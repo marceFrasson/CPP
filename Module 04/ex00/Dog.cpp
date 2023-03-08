@@ -23,10 +23,10 @@ Dog::~Dog( void )
   return ;
 }
 
-Dog &Dog::operator=( const Dog &rightHandSide )
+Dog &Dog::operator=( const Dog &rhs )
 {
-  if (this != &rightHandSide)
-    _type = rightHandSide._type;
+  if (this != &rhs)
+    _type = rhs._type;
   
   return (*this);
 }

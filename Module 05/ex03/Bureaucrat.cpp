@@ -31,10 +31,10 @@ Bureaucrat::~Bureaucrat( void )
   return ;
 }
 
-Bureaucrat &Bureaucrat::operator=( const Bureaucrat &rightHandSide )
+Bureaucrat &Bureaucrat::operator=( const Bureaucrat &rhs )
 {
-  if (this != &rightHandSide)
-    _grade = rightHandSide._grade;
+  if (this != &rhs)
+    _grade = rhs._grade;
 
   return (*this);
 }

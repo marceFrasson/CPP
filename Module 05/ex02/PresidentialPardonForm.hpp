@@ -17,7 +17,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm( const PresidentialPardonForm &source );
 		~PresidentialPardonForm( void );
 
-		PresidentialPardonForm &operator=( const PresidentialPardonForm &rightHandSide );
+		PresidentialPardonForm &operator=( const PresidentialPardonForm &rhs );
 
 		bool execute( const Bureaucrat &executor ) const;
 

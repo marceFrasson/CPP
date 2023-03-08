@@ -17,7 +17,7 @@ class Animal
     Animal( const Animal &source );
     ~Animal( void );
 
-    Animal &operator=( const Animal &rightHandSide );
+    Animal &operator=( const Animal &rhs );
 
     void makeSound( void );
     std::string getType( void );

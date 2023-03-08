@@ -30,16 +30,16 @@ ClapTrap::~ClapTrap( void )
   return ;
 }
 
-ClapTrap &ClapTrap::operator=( const ClapTrap &rightHandSide )
+ClapTrap &ClapTrap::operator=( const ClapTrap &rhs )
 {
   std::cout << "ClapTrap " << _name << " has been assigned copied!" << std::endl;
 
-  if (this != &rightHandSide)
+  if (this != &rhs)
   {
-    _name = rightHandSide._name;
-    _hitPoints = rightHandSide._hitPoints;
-    _energyPoints = rightHandSide._energyPoints;
-    _attackDamage = rightHandSide._attackDamage;
+    _name = rhs._name;
+    _hitPoints = rhs._hitPoints;
+    _energyPoints = rhs._energyPoints;
+    _attackDamage = rhs._attackDamage;
   }
 
   return (*this);

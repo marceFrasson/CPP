@@ -23,10 +23,10 @@ WrongCat::~WrongCat( void )
   return ;
 }
 
-WrongCat &WrongCat::operator=( const WrongCat &rightHandSide )
+WrongCat &WrongCat::operator=( const WrongCat &rhs )
 {
-  if (this != &rightHandSide)
-    _type = rightHandSide._type;
+  if (this != &rhs)
+    _type = rhs._type;
   
   return (*this);
 }

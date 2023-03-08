@@ -20,7 +20,7 @@ class Bureaucrat
     Bureaucrat( const Bureaucrat &source );
     ~Bureaucrat( void );
 
-    Bureaucrat &operator=( const Bureaucrat &rightHandSide );
+    Bureaucrat &operator=( const Bureaucrat &rhs );
 
     std::string getName( void ) const;
     int getGrade( void ) const;

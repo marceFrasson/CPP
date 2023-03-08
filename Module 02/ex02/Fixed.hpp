@@ -20,19 +20,19 @@ class Fixed
 
     ~Fixed( void );                                        // destructor
 
-    Fixed &operator=( Fixed const &rightHandSide );        // copy assignment operator overload
+    Fixed &operator=( Fixed const &rhs );        // copy assignment operator overload
     
-    Fixed operator+( Fixed const &rightHandSide ) const;   // sum arithmetic operator overload
-    Fixed operator-( Fixed const &rightHandSide ) const;   // subtraction arithmetic operator overload
-    Fixed operator*( Fixed const &rightHandSide ) const;   // multiply arithmetic operator overload
-    Fixed operator/( Fixed const &rightHandSide ) const;   // divide arithmetic operator overload
+    Fixed operator+( Fixed const &rhs ) const;   // sum arithmetic operator overload
+    Fixed operator-( Fixed const &rhs ) const;   // subtraction arithmetic operator overload
+    Fixed operator*( Fixed const &rhs ) const;   // multiply arithmetic operator overload
+    Fixed operator/( Fixed const &rhs ) const;   // divide arithmetic operator overload
 
-    bool  operator>( Fixed const &rightHandSide ) const;   // great comparison operator overload
-    bool  operator<( Fixed const &rightHandSide ) const;   // small comparison operator overload
-    bool  operator>=( Fixed const &rightHandSide ) const;  // great|equal comparison operator overload
-    bool  operator<=( Fixed const &rightHandSide ) const;  // small|equal comparison operator overload
-    bool  operator==( Fixed const &rightHandSide ) const;  // equal comparison operator overload
-    bool  operator!=( Fixed const &rightHandSide ) const;  // not equal comparison operator overload
+    bool  operator>( Fixed const &rhs ) const;   // great comparison operator overload
+    bool  operator<( Fixed const &rhs ) const;   // small comparison operator overload
+    bool  operator>=( Fixed const &rhs ) const;  // great|equal comparison operator overload
+    bool  operator<=( Fixed const &rhs ) const;  // small|equal comparison operator overload
+    bool  operator==( Fixed const &rhs ) const;  // equal comparison operator overload
+    bool  operator!=( Fixed const &rhs ) const;  // not equal comparison operator overload
 
     Fixed &operator++( void );                             // pre-increment operator overload
     Fixed &operator--( void );                             // pre-decrement operator overload

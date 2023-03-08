@@ -17,10 +17,10 @@ Brain::~Brain( void )
   return ;
 }
 
-Brain &Brain::operator=( const Brain &rightHandSide )
+Brain &Brain::operator=( const Brain &rhs )
 {
-  if (this != &rightHandSide)
-    *_ideas = *rightHandSide._ideas;
+  if (this != &rhs)
+    *_ideas = *rhs._ideas;
   
   return (*this);
 }

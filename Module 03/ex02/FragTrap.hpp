@@ -13,7 +13,7 @@ class FragTrap : public ClapTrap
     FragTrap( const FragTrap &source );
     ~FragTrap( void );
 
-    FragTrap &operator=( const FragTrap &rightHandSide );
+    FragTrap &operator=( const FragTrap &rhs );
 
     void highFivesGuys( void );
 

@@ -25,10 +25,10 @@ PresidentialPardonForm::~PresidentialPardonForm( void )
   return ;
 }
 
-PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPardonForm &rightHandSide )
+PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPardonForm &rhs )
 {
-  if (this != &rightHandSide)
-    _target = rightHandSide._target;
+  if (this != &rhs)
+    _target = rhs._target;
 
   return (*this);
 }

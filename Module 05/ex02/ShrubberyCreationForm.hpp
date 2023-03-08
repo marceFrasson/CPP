@@ -18,7 +18,7 @@ class ShrubberyCreationForm : public AForm
     ShrubberyCreationForm( const ShrubberyCreationForm &source );
     ~ShrubberyCreationForm( void );
 
-    ShrubberyCreationForm &operator=( const ShrubberyCreationForm &rightHandSide );
+    ShrubberyCreationForm &operator=( const ShrubberyCreationForm &rhs );
 
     bool execute( const Bureaucrat &executor ) const;
 

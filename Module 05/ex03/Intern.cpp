@@ -17,9 +17,9 @@ Intern::~Intern( void )
   return ;
 }
 
-Intern &Intern::operator=( const Intern &rightHandSide )
+Intern &Intern::operator=( const Intern &rhs )
 {
-  (void)rightHandSide;
+  (void)rhs;
 
   return (*this);
 }

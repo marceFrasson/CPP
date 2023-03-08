@@ -21,10 +21,10 @@ Animal::~Animal( void )
   return ;
 }
 
-Animal &Animal::operator=( const Animal &rightHandSide )
+Animal &Animal::operator=( const Animal &rhs )
 {
-  if (this != &rightHandSide)
-    _type = rightHandSide._type;
+  if (this != &rhs)
+    _type = rhs._type;
   
   return (*this);
 }

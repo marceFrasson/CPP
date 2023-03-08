@@ -19,7 +19,7 @@ class RobotomyRequestForm : public AForm
     RobotomyRequestForm( const RobotomyRequestForm &source );
     ~RobotomyRequestForm( void );
 
-    RobotomyRequestForm &operator=( const RobotomyRequestForm &rightHandSide );
+    RobotomyRequestForm &operator=( const RobotomyRequestForm &rhs );
 
     bool execute( const Bureaucrat &executor ) const;
 

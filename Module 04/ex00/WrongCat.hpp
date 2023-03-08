@@ -12,7 +12,7 @@ class WrongCat : public WrongAnimal
     WrongCat( const WrongCat &source );
     ~WrongCat( void );
 
-    WrongCat &operator=( const WrongCat &rightHandSide );
+    WrongCat &operator=( const WrongCat &rhs );
   
 };
 
