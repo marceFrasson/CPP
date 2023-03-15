@@ -28,30 +28,42 @@ PmergeMe<T> &PmergeMe<T>::operator=( const PmergeMe<T> &rhs )
 }
 
 template <typename T>
-void PmergeMe<T>::printMe( T &container )
+bool PmergeMe<T>::hasDuplicates( T &container )
 {
-  int i = 0;
+  T sortedContainer = container;
 
-  for (typename T::const_iterator it = container.begin(); it != container.end(); ++it)
-  {
-    std::cout << *it << " ";
+  mergeSort(sortedContainer);
 
-    i++;
-
-    if (i >= 15)
-    {
-      std::cout << "[..]";
-
-      break;
-    }
-  }
-
-  std::cout << std::endl;
+  return (std::unique(sortedContainer.begin(),
+            sortedContainer.end()) != sortedContainer.end());
 }
 
 template <typename T>
-void PmergeMe<T>::mergeMe( typename T::iterator begin, typename T::iterator middle,
-                                  typename T::iterator end )
+void PmergeMe<T>::mergeSort( T &container )
+{
+  mergeSort(container, container.begin(), container.end());
+}
+
+template <typename T>
+void PmergeMe<T>::mergeSort( T &container, typename T::iterator begin,
+                                typename T::iterator end )
+{
+  if (begin == end || ++begin == end)
+    return ;
+
+  --begin;
+
+  typename T::iterator middle = begin;
+  std::advance(middle, std::distance(begin, end) / 2);
+
+  mergeSort(container, begin, middle);
+  mergeSort(container, middle, end);
+  mergeMe(begin, middle, end);
+}
+
+template <typename T>
+void PmergeMe<T>::mergeMe( typename T::iterator begin,
+              typename T::iterator middle, typename T::iterator end )
 {
   T left(begin, middle);
   T right(middle, end);
@@ -92,36 +104,26 @@ void PmergeMe<T>::mergeMe( typename T::iterator begin, typename T::iterator midd
 }
 
 template <typename T>
-void PmergeMe<T>::mergeSort( T &container, typename T::iterator begin,
-                                typename T::iterator end )
+void PmergeMe<T>::printMe( T &container )
 {
-  if (begin == end || ++begin == end)
-    return ;
+  int i = 0;
 
-  --begin;
+  for (typename T::const_iterator it = container.begin();
+              it != container.end(); ++it)
+  {
+    std::cout << *it << " ";
 
-  typename T::iterator middle = begin;
-  std::advance(middle, std::distance(begin, end) / 2);
+    i++;
 
-  mergeSort(container, begin, middle);
-  mergeSort(container, middle, end);
-  mergeMe(begin, middle, end);
-}
+    if (i >= 15)
+    {
+      std::cout << "[..]";
 
-template <typename T>
-void PmergeMe<T>::mergeSort( T &container )
-{
-  mergeSort(container, container.begin(), container.end());
-}
+      break;
+    }
+  }
 
-template <typename T>
-bool PmergeMe<T>::hasDuplicates( T &container )
-{
-  T sortedContainer = container;
-
-  mergeSort(sortedContainer);
-
-  return (std::unique(sortedContainer.begin(), sortedContainer.end()) != sortedContainer.end());
+  std::cout << std::endl;
 }
 
 template class PmergeMe< std::deque<int> >;

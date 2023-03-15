@@ -18,12 +18,12 @@ class PmergeMe
 
     PmergeMe &operator=( const PmergeMe<T> &rhs );
 
-    void printMe( T &container );
+    bool hasDuplicates( T &container );
     void mergeSort( T &container );
     void mergeSort( T &container, typename T::iterator begin, typename T::iterator end );
-    void mergeMe( typename T::iterator begin,
-                typename T::iterator middle, typename T::iterator end );
-    bool hasDuplicates( T &container );
+    void mergeMe( typename T::iterator begin, typename T::iterator middle,
+                          typename T::iterator end );
+    void printMe( T &container );
 
 };
 
