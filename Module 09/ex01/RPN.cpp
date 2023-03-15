@@ -15,13 +15,13 @@ RPNCalculator::~RPNCalculator( void )
   return ;
 }
 
-// RPNCalculator &RPNCalculator::operator=( const RPNCalculator &rhs )
-// {
-//   if (this != &rhs)
-//     *this = rhs;
+RPNCalculator &RPNCalculator::operator=( const RPNCalculator &rhs )
+{
+  if (this != &rhs)
+    *this = rhs;
 
-//   return (*this);
-// }
+  return (*this);
+}
 
 double RPNCalculator::evaluate( std::string expression )
 {

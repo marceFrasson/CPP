@@ -6,7 +6,7 @@ NAME = PmergeMe
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $(NAME)

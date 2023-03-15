@@ -16,7 +16,7 @@ class RPNCalculator
     RPNCalculator( const RPNCalculator &source );
     ~RPNCalculator( void );
 
-    // RPNCalculator &operator=( const RPNCalculator &rhs );
+    RPNCalculator &operator=( const RPNCalculator &rhs );
     
     double evaluate( std::string expression );
 
