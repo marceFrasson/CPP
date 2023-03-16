@@ -12,7 +12,7 @@ int main( int argc, char *argv[] )
   std::string                 csvFileName;
   std::string                 txtFileName;
 
-  csvFileName = "input.csv";
+  csvFileName = "data.csv";
   txtFileName = argv[1];
 
   bitcoinExchange(csvFileName, txtFileName);
