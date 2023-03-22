@@ -18,7 +18,7 @@ class RPNCalculator
 
     RPNCalculator &operator=( const RPNCalculator &rhs );
     
-    double evaluate( std::string expression );
+    std::string evaluate( std::string expression );
 
     class Error : public std::exception
     {

@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
   try
 	{
-    double result = RPN.evaluate(expression);
+    std::string result = RPN.evaluate(expression);
 
     std::cout << "\nResult: " << result << std::endl << std::endl;
   }

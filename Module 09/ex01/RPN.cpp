@@ -23,49 +23,61 @@ RPNCalculator &RPNCalculator::operator=( const RPNCalculator &rhs )
   return (*this);
 }
 
-double RPNCalculator::evaluate( std::string expression )
+std::string RPNCalculator::evaluate( std::string expression )
 {
-  for (std::string::size_type i = 0; i < expression.size(); ++i)
-  {
-    char c = expression[i];
-    if (!isdigit(c) && c != ' ' && c != '+' && c != '-' && c != '*' && c != '/')
-      throw Error();
-  }
+  std::stack<double> operandStack;
+  std::string token(expression);
 
-  std::stack<double>  operandStack;
-  std::stringstream   stringStream(expression);
-  std::string         token;
+  int i = -1;
 
-  while (getline(stringStream, token, ' '))
+  while (token[++i])
   {
-    if (token == "+" || token == "-" || token == "*" || token == "/")
+    if (token[i] == ' ')
+      continue ;
+
+    else if (isdigit(token[i]))
+      operandStack.push(token[i] - '0');
+
+    else if (token[i] == '+' || token[i] == '-' || token[i] == '*' || token[i] == '/')
     {
       if (operandStack.size() < 2)
-        throw Error();
-
+        throw std::runtime_error("\nError: not enough operands for the operator.\n");
+      
       double rhs = operandStack.top();
       operandStack.pop();
       double lhs = operandStack.top();
       operandStack.pop();
 
-      if (token == "+")
+      if (token[i] == '+')
         operandStack.push(lhs + rhs);
-      else if (token == "-")
+
+      else if (token[i] == '-')
         operandStack.push(lhs - rhs);
-      else if (token == "*")
+
+      else if (token[i] == '*')
         operandStack.push(lhs * rhs);
-      else if (token == "/")
+
+      else if (token[i] == '/')
         operandStack.push(lhs / rhs);
     }
-
-    else if (std::atof(token.c_str()) > 10)
-      return (42);
-
+    
     else
-      operandStack.push(std::atof(token.c_str()));
+      throw std::runtime_error("\nError: invalid character.\n");
+  }
+  
+  std::stringstream resultStream;
+
+  while (!operandStack.empty())
+  {
+    resultStream << operandStack.top();
+
+    operandStack.pop();
+    
+    if (!operandStack.empty())
+      resultStream << " ";
   }
 
-  return operandStack.top();
+    return resultStream.str();
 }
 
 const char* RPNCalculator::Error::what() const throw()
