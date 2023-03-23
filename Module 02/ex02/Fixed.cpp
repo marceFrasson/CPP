@@ -9,7 +9,7 @@ Fixed::Fixed( void ) : _rawBits( 0 )
 
 Fixed::Fixed( const Fixed &source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

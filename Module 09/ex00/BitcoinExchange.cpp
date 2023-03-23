@@ -13,7 +13,8 @@ void bitcoinExchange(std::string csvFileName, std::string txtFileName)
   printBitcoinExchange(inputData);
 }
 
-void readBitcoinData(std::vector<BitcoinExchange> &bitcoinData, std::string fileName)
+void readBitcoinData(std::vector<BitcoinExchange> &bitcoinData,
+                          std::string fileName)
 {
   std::ifstream file;
   std::string line;
@@ -79,12 +80,15 @@ void readInputData(std::vector<InputValues> &inputData, std::string fileName)
     bool notPositive = false;
     bool badInput = false;
 
-    if (value >= MAXINT)
+    if (value > 1000)
       tooLarge = true;
+
     else if (pos != 10 || !isValidDate(date))
       badInput = true;
+
     else if (value < 0)
       notPositive = true;
+
     else
       value = float(value);
 
@@ -94,7 +98,8 @@ void readInputData(std::vector<InputValues> &inputData, std::string fileName)
   }
 }
 
-void exchange(const std::vector<BitcoinExchange> bitcoinData, std::vector<InputValues> &inputData)
+void exchange(const std::vector<BitcoinExchange> bitcoinData,
+                std::vector<InputValues> &inputData)
 {
   for (long unsigned int i = 0; i < bitcoinData.size(); i++)
   {
@@ -102,7 +107,8 @@ void exchange(const std::vector<BitcoinExchange> bitcoinData, std::vector<InputV
     {
       if (inputData[j].date == bitcoinData[i].date)
       {
-        if (inputData[j].tooLarge || !inputData[j].notPositive || !inputData[j].badInput)
+        if (inputData[j].tooLarge || !inputData[j].notPositive
+              || !inputData[j].badInput)
           inputData[j].exchangedValue = inputData[j].value * bitcoinData[i].value;
       }
     }
@@ -115,46 +121,52 @@ void printBitcoinExchange(const std::vector<InputValues> inputData)
   {
     if (inputData[i].tooLarge)
       std::cout << "Error: too large a number." << std::endl;
+
     else if (inputData[i].notPositive)
       std::cout << "Error: not a positive number." << std::endl;
+
     else if (inputData[i].badInput)
-      std::cout << "Error: bad input => \"" << inputData[i].date << "\"" << std::endl;
+      std::cout << "Error: bad input => \"" << inputData[i].date
+        << "\"" << std::endl;
+
     else
-      std::cout << inputData[i].date << " => " << inputData[i].value << " = " << inputData[i].exchangedValue << std::endl;
+      std::cout << inputData[i].date << " => " << inputData[i].value
+        << " = " << inputData[i].exchangedValue << std::endl;
   }
 }
 
 bool isValidDate( const std::string &date )
 {
-    if (date.length() != 10)
-        return false;
+  if (date.length() != 10)
+    return false;
 
-    if (date[4] != '-' || date[7] != '-')
-        return false;
+  if (date[4] != '-' || date[7] != '-')
+    return false;
 
-    int year = atoi(date.substr(0, 4).c_str());
-    int month = atoi(date.substr(5, 2).c_str());
-    int day = atoi(date.substr(8, 2).c_str());
+  int year = atoi(date.substr(0, 4).c_str());
+  int month = atoi(date.substr(5, 2).c_str());
+  int day = atoi(date.substr(8, 2).c_str());
 
-    if (year < 2009 || year > 2023)
-        return false;
+  if (year < 2009 || year > 2023)
+    return (false);
 
-    if (month < 1 || month > 12)
-        return false;
+  if (month < 1 || month > 12)
+    return (false);
 
-    if (day < 1 || day > 31)
-        return false;
+  if (day < 1 || day > 31)
+    return (false);
 
-    if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
-        return false;
+  if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+    return (false);
 
-    if (month == 2)
-    {
-        if (day > 29)
-            return false;
-        if (day == 29 && (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)))
-            return false;
-    }
+  if (month == 2)
+  {
+    if (day > 29)
+      return (false);
+        
+    if (day == 29 && (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)))
+      return (false);
+  }
 
-    return true;
+  return (true);
 }

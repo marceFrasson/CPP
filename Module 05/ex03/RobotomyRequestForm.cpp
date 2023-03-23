@@ -15,7 +15,7 @@ RobotomyRequestForm::RobotomyRequestForm( std::string target )
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm &source )
   : AForm( "RobotomyRequestForm", 72, 45 )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

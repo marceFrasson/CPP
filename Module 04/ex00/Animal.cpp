@@ -9,7 +9,7 @@ Animal::Animal( void ) : _type( "Unknown" )
 
 Animal::Animal( const Animal &source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

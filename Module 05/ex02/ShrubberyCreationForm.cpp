@@ -15,7 +15,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string &target )
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &source )
   : AForm( "ShrubberyCreationForm", 145, 137 )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

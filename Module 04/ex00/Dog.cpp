@@ -11,7 +11,7 @@ Dog::Dog( void )
 
 Dog::Dog( const Dog &source ) : Animal( source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

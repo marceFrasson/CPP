@@ -26,7 +26,7 @@ ScavTrap::ScavTrap( const ScavTrap &source ) : ClapTrap( source )
 {
   std::cout << "ScavTrap " << _name << " copied!" << std::endl;
 
-  operator=(source);
+  *this = source;
 
   return ;
 }

@@ -7,8 +7,6 @@
 #include <vector>
 #include <cstdlib>
 
-# define MAXINT 214748364
-
 struct BitcoinExchange
 {
   std::string   date;

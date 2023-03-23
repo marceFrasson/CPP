@@ -17,7 +17,7 @@ Conversion::Conversion( std::string toConvert )
 
 Conversion::Conversion( const Conversion &source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

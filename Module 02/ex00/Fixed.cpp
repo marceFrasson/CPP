@@ -13,7 +13,7 @@ Fixed::Fixed( const Fixed &source )
 {
   std::cout << "Copy constructor called" << std::endl;
 
-  operator=(source);
+  *this = source;
 
   return ;
 }

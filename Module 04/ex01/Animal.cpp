@@ -9,7 +9,7 @@ Animal::Animal( void ) : _type( "Unknown" )
 
 Animal::Animal( const Animal &source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }
@@ -37,4 +37,13 @@ void Animal::makeSound( void )
 std::string Animal::getType( void )
 {
   return (_type);
+}
+
+void Animal::getIdea( int index )
+{
+  (void)index;
+
+  std::cout <<  "This animal has no brain..." << std::endl;
+
+  return ;
 }

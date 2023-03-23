@@ -11,7 +11,7 @@ Cat::Cat( void )
 
 Cat::Cat( const Cat &source ) : Animal( source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

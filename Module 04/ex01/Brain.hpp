@@ -2,14 +2,15 @@
 # define BRAIN_HPP
 
 #include "Animal.hpp"
+#include <time.h>
+#include <cstdlib>
 
 class Brain
 {
-  private:
-
-    std::string _ideas[100];
-
+  
   public:
+
+    std::string ideas[100];
 
     Brain( void );
     Brain( const Brain &source );

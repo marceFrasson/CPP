@@ -11,7 +11,7 @@ WrongCat::WrongCat( void )
 
 WrongCat::WrongCat( const WrongCat &source ) : WrongAnimal( source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

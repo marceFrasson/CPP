@@ -26,7 +26,7 @@ FragTrap::FragTrap( const FragTrap &source ) : ClapTrap ( source )
 {
   std::cout << "FragTrap " << _name << " copied!" << std::endl;
 
-  operator=(source);
+  *this = source;
 
   return ;
 }

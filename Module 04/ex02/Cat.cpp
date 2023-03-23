@@ -13,7 +13,7 @@ Cat::Cat( void )
 
 Cat::Cat( const Cat &source ) : Animal( source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }
@@ -30,7 +30,12 @@ Cat::~Cat( void )
 Cat &Cat::operator=( const Cat &rhs )
 {
   if (this != &rhs)
+  {
     _type = rhs._type;
+    _brain = new Brain(*rhs._brain);
+  }
+
+  std::cout << "Cat copy assignment operator called." << std::endl;
   
   return (*this);
 }
@@ -38,4 +43,11 @@ Cat &Cat::operator=( const Cat &rhs )
 void Cat::makeSound( void )
 {
   std::cout << "meowwwwww" << std::endl;
+}
+
+void Cat::getIdea( int index )
+{ 
+  std::cout << _brain->ideas[index] << std::endl;
+
+  return ;
 }

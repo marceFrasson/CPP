@@ -15,7 +15,7 @@ PresidentialPardonForm::PresidentialPardonForm( std::string target )
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &source )
   : AForm( "PresidentialPardon", 25, 5 )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

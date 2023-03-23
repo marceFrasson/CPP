@@ -7,7 +7,7 @@ Intern::Intern( void )
 
 Intern::Intern( const Intern &source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

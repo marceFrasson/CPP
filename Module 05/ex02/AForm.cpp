@@ -24,7 +24,7 @@ AForm::AForm( const AForm &source )
           : _name( source.getName() ), _gradeToSign( source.getGradeToSign() ),
             _gradeToExecute( source.getGradeToExecute() )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }

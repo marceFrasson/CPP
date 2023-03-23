@@ -10,7 +10,7 @@ ClapTrap::ClapTrap( void )
 
 ClapTrap::ClapTrap( const ClapTrap &source )
 {
-  operator=(source);
+  *this = source;
 
   return ;
 }
