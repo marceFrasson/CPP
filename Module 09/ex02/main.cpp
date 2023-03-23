@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		std::cerr << "Error: Missing arguments." << std::endl;
+		std::cerr << "Error: Missing arguments.\n" << std::endl;
 
 		return (1);
 	}

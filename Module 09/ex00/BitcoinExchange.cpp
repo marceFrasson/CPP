@@ -1,20 +1,14 @@
 #include "BitcoinExchange.hpp"
 
-void bitcoinExchange(std::string csvFileName, std::string txtFileName)
+void bitcoinExchange( std::string csvFileName, std::string txtFileName )
 {
-  std::vector<BitcoinExchange> bitcoinData;
-  std::vector<InputValues> inputData;
+  BitcoinExchange bitcoinData;
 
   readBitcoinData(bitcoinData, csvFileName);
-  readInputData(inputData, txtFileName);
-
-  exchange(bitcoinData, inputData);
-
-  printBitcoinExchange(inputData);
+  readInputDataAndExchange(bitcoinData, txtFileName);
 }
 
-void readBitcoinData(std::vector<BitcoinExchange> &bitcoinData,
-                          std::string fileName)
+void readBitcoinData( BitcoinExchange &bitcoinData, std::string fileName )
 {
   std::ifstream file;
   std::string line;
@@ -27,7 +21,7 @@ void readBitcoinData(std::vector<BitcoinExchange> &bitcoinData,
   {
     std::istringstream  stringStream;
     std::string         date;
-    float               value;
+    double              value;
 
     stringStream.str(line);
 
@@ -35,13 +29,11 @@ void readBitcoinData(std::vector<BitcoinExchange> &bitcoinData,
 
     stringStream >> value;
 
-    BitcoinExchange bitcoin(date, value);
-
-    bitcoinData.push_back(bitcoin);
+    bitcoinData._map.insert(std::make_pair(date, value));
   }
 }
 
-void readInputData(std::vector<InputValues> &inputData, std::string fileName)
+void readInputDataAndExchange( BitcoinExchange &bitcoinData, std::string fileName )
 {
   std::ifstream   file;
   std::string     line;
@@ -53,6 +45,7 @@ void readInputData(std::vector<InputValues> &inputData, std::string fileName)
   if (!(line == "date | value"))
   {
     std::cout << "Error: bad input => \"" << line << "\"" << std::endl;
+
     return ;
   }
 
@@ -69,6 +62,7 @@ void readInputData(std::vector<InputValues> &inputData, std::string fileName)
       date = line.substr(0, pos);
       stringValue = line.substr(pos + delimiter.length());
     }
+
     else
     {
       date = line;
@@ -76,63 +70,87 @@ void readInputData(std::vector<InputValues> &inputData, std::string fileName)
     }
     
     double value = std::atof(stringValue.c_str());
-    bool tooLarge = false;
-    bool notPositive = false;
-    bool badInput = false;
 
     if (value > 1000)
-      tooLarge = true;
-
-    else if (pos != 10 || !isValidDate(date))
-      badInput = true;
-
-    else if (value < 0)
-      notPositive = true;
-
-    else
-      value = float(value);
-
-    InputValues input(date, value, tooLarge, notPositive, badInput);
-
-    inputData.push_back(input);
-  }
-}
-
-void exchange(const std::vector<BitcoinExchange> bitcoinData,
-                std::vector<InputValues> &inputData)
-{
-  for (long unsigned int i = 0; i < bitcoinData.size(); i++)
-  {
-    for (long unsigned int j = 0; j < inputData.size(); j++)
-    {
-      if (inputData[j].date == bitcoinData[i].date)
-      {
-        if (inputData[j].tooLarge || !inputData[j].notPositive
-              || !inputData[j].badInput)
-          inputData[j].exchangedValue = inputData[j].value * bitcoinData[i].value;
-      }
-    }
-  }
-}
-
-void printBitcoinExchange(const std::vector<InputValues> inputData)
-{
-  for (long unsigned int i = 0; i < inputData.size(); i++)
-  {
-    if (inputData[i].tooLarge)
       std::cout << "Error: too large a number." << std::endl;
 
-    else if (inputData[i].notPositive)
+    else if (pos != 10 || !isValidDate(date))
+      std::cout << "Error: bad input => \"" << date << "\"" << std::endl;
+
+    else if (value < 0)
       std::cout << "Error: not a positive number." << std::endl;
 
-    else if (inputData[i].badInput)
-      std::cout << "Error: bad input => \"" << inputData[i].date
-        << "\"" << std::endl;
+    else
+      std::cout << date << " => " << value << " = "
+        << value * exchangeRate(bitcoinData, date) << std::endl;
+  }
+}
+
+double exchangeRate( BitcoinExchange bitcoinData, std::string date )
+{
+  std::map<std::string, double>::iterator it = bitcoinData._map.find(date);
+
+  if (it != bitcoinData._map.end())
+    return (it->second);
+
+  else
+  {
+    date = pastDate(date);
+    
+    return (exchangeRate(bitcoinData, date));
+  }
+}
+
+std::string pastDate( std::string date )
+{
+  int year = atoi(date.substr(0, 4).c_str());
+  int month = atoi(date.substr(5, 2).c_str());
+  int day = atoi(date.substr(8, 2).c_str());
+
+  if (day == 1)
+  {
+    if (month == 1)
+    {
+      month = 12;
+      year--;  
+    }
+
+    else if (month == 4 || month == 6 || month == 9 || month == 11)
+    {
+      month--;
+      day = 31;
+    }
+
+    else if (month == 3)
+    {
+      month--;
+      
+      if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0))
+        day = 28;
+
+      else
+        day = 29;
+    }
 
     else
-      std::cout << inputData[i].date << " => " << inputData[i].value
-        << " = " << inputData[i].exchangedValue << std::endl;
+    {
+      month--;
+      day = 30;
+    }
   }
+
+  else
+    day--;
+
+  std::stringstream str;
+
+  str << std::setw(4) << std::setfill('0') << year << "-"
+      << std::setw(2) << std::setfill('0') << month << "-"
+      << std::setw(2) << std::setfill('0') << day;
+
+  date = str.str();
+
+  return (date);
 }
 
 bool isValidDate( const std::string &date )

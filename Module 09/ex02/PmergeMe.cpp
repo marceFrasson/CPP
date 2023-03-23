@@ -67,39 +67,40 @@ void PmergeMe<T>::mergeMe( typename T::iterator begin,
 {
   T left(begin, middle);
   T right(middle, end);
+  
+  typename T::iterator leftIt = left.begin();
+  typename T::iterator rightIt = right.begin();
+  typename T::iterator mergeIt = begin;
 
-  typename T::iterator leftIter = left.begin();
-  typename T::iterator rightIter = right.begin();
-  typename T::iterator mergeIter = begin;
-
-  while (leftIter != left.end() && rightIter != right.end())
+  while (leftIt != left.end() && rightIt != right.end())
   {
-    if (*leftIter <= *rightIter)
+    if (*leftIt <= *rightIt)
     {
-      *mergeIter = *leftIter;
-      ++leftIter;
+      *mergeIt = *leftIt;
+      ++leftIt;
     }
 
     else
     {
-      *mergeIter = *rightIter;
-      ++rightIter;
+      *mergeIt = *rightIt;
+      ++rightIt;
     }
-    ++mergeIter;
+
+    ++mergeIt;
   }
 
-  while (leftIter != left.end())
+  while (leftIt != left.end())
   {
-    *mergeIter = *leftIter;
-    ++leftIter;
-    ++mergeIter;
+    *mergeIt = *leftIt;
+    ++leftIt;
+    ++mergeIt;
   }
 
-  while (rightIter != right.end())
+  while (rightIt != right.end())
   {
-    *mergeIter = *rightIter;
-    ++rightIter;
-    ++mergeIter;
+    *mergeIt = *rightIt;
+    ++rightIt;
+    ++mergeIt;
   }
 }
 

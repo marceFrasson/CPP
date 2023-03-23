@@ -9,8 +9,8 @@ int main( int argc, char *argv[] )
     return (1);
   }
 
-  std::string                 csvFileName;
-  std::string                 txtFileName;
+  std::string csvFileName;
+  std::string txtFileName;
 
   csvFileName = "data.csv";
   txtFileName = argv[1];
