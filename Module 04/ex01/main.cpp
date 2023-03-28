@@ -47,6 +47,17 @@ int main( void )
     std::cout << std::endl;
   }
 
+  std::cout << std::endl << "deep copy test" << std::endl << std::endl;
+
+  Dog basic;
+  Dog tmp = basic;
+
+  basic.setIdea("one", 0);
+  tmp.setIdea("two", 0);
+
+  basic.getIdea(0);
+  tmp.getIdea(0);
+  
   std::cout << std::endl;
 
   return (0);

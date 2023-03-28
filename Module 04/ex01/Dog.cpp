@@ -42,14 +42,17 @@ Dog &Dog::operator=( const Dog &rhs )
   return (*this);
 }
 
-void Dog::makeSound( void )
+void Dog::makeSound( void ) const
 {
   std::cout << "WOOF WOOF" << std::endl;
 }
 
+void Dog::setIdea( std::string idea, int index )
+{
+  _brain->setIdea(idea, index);
+}
+
 void Dog::getIdea( int index )
 {  
-  std::cout << _brain->ideas[index] << std::endl;
-  
-  return ;
+  _brain->getIdea(index);
 }

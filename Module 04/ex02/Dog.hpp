@@ -15,11 +15,13 @@ class Dog : public Animal
 
     Dog( void );
     Dog( const Dog &source );
-    virtual ~Dog( void );
+    ~Dog( void );
 
     Dog &operator=( const Dog &rhs );
   
-    void makeSound( void );
+    void makeSound( void ) const;
+    
+    void setIdea( std::string idea, int index );
     void getIdea( int index );
 
 };

@@ -8,15 +8,20 @@
 class Brain
 {
   
-  public:
+  private:
 
-    std::string ideas[100];
+    std::string _ideas[100];
+
+  public:
 
     Brain( void );
     Brain( const Brain &source );
     ~Brain( void );
 
     Brain &operator=( const Brain &rhs );
+
+    void setIdea( std::string idea, int index );
+    void getIdea( int index );
 
 };
 

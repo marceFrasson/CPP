@@ -19,7 +19,9 @@ class Dog : public Animal
 
     Dog &operator=( const Dog &rhs );
   
-    void makeSound( void );
+    void makeSound( void ) const;
+    
+    void setIdea( std::string idea, int index );
     void getIdea( int index );
 
 };

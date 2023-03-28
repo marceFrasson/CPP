@@ -15,11 +15,13 @@ class Cat : public Animal
 
     Cat( void );
     Cat( const Cat &source );
-    virtual ~Cat( void );
+    ~Cat( void );
 
     Cat &operator=( const Cat &rhs );
 
-    void makeSound( void );
+    void makeSound( void ) const;
+
+    void setIdea( std::string idea, int index );
     void getIdea( int index );
 
 };

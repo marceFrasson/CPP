@@ -110,7 +110,7 @@ Brain::Brain( void )
   std::srand((unsigned int)time(NULL));
   
 	for(int i = 0; i < 100; i++)
-		ideas[i] = listOfIdeas[rand() % 100];
+		_ideas[i] = listOfIdeas[rand() % 100];
 
   std::cout << "Brain constructor called." << std::endl;
 
@@ -121,11 +121,15 @@ Brain::Brain( const Brain &source )
 {
   *this = source;
 
+  std::cout << "Brain copy constructor called." << std::endl;
+
   return ;
 }
 
 Brain::~Brain( void )
 {
+  std::cout << "Brain destructor called." << std::endl;
+  
   return ;
 }
 
@@ -134,10 +138,20 @@ Brain &Brain::operator=( const Brain &rhs )
   if (this != &rhs)
   {
     for (int i = 0; i < 100; i++)
-			this->ideas[i] = rhs.ideas[i];
+			_ideas[i] = rhs._ideas[i];
   }
 
   std::cout << "Brain copy assignment operator called." << std::endl;
   
   return (*this);
+}
+
+void Brain::setIdea( std::string idea, int index )
+{
+  _ideas[index] = idea;
+}
+
+void Brain::getIdea( int index )
+{
+  std::cout << _ideas[index] << std::endl;
 }

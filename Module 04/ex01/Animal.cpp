@@ -29,7 +29,7 @@ Animal &Animal::operator=( const Animal &rhs )
   return (*this);
 }
 
-void Animal::makeSound( void )
+void Animal::makeSound( void ) const
 {
   std::cout << "..." << std::endl;
 }
@@ -39,11 +39,17 @@ std::string Animal::getType( void )
   return (_type);
 }
 
+void Animal::setIdea( std::string idea, int index )
+{
+  (void) idea;
+  (void) index;
+
+  std::cout <<  "This animal has no brain..." << std::endl;
+}
+
 void Animal::getIdea( int index )
 {
   (void)index;
 
   std::cout <<  "This animal has no brain..." << std::endl;
-
-  return ;
 }

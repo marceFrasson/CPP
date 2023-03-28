@@ -6,7 +6,7 @@
 /*   By: mfrasson <mfrasson@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 02:23:51 by mmoreira          #+#    #+#             */
-/*   Updated: 2023/01/20 22:22:51 by mfrasson         ###   ########.fr       */
+/*   Updated: 2023/03/23 03:44:17 by mfrasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main( void )
     Bureaucrat karen("Karen", 1);
     std::cout << karen << std::endl;
   }
+
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -31,6 +32,7 @@ int	main( void )
     Bureaucrat john("John", 150);
     std::cout << john << std::endl;
   }
+
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -43,6 +45,7 @@ int	main( void )
     Bureaucrat karen("Karen", 0);
     std::cout << karen << std::endl;
   }
+
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -53,6 +56,7 @@ int	main( void )
     Bureaucrat john("John", 151);
     std::cout << john << std::endl;
   }
+
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -67,6 +71,7 @@ int	main( void )
     karen.downGrade();
     std::cout << karen << std::endl;
   }
+
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -81,6 +86,7 @@ int	main( void )
     john.upGrade();
     std::cout << john << std::endl;
   }
+
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -94,6 +100,7 @@ int	main( void )
     std::cout << karen << std::endl;
     karen.upGrade();
   }
+
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;
@@ -107,6 +114,7 @@ int	main( void )
     std::cout << john << std::endl;
     john.downGrade();
   }
+  
   catch (std::exception &exception)
   {
     std::cerr << exception.what() << std::endl;

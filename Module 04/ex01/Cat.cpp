@@ -42,14 +42,17 @@ Cat &Cat::operator=( const Cat &rhs )
   return (*this);
 }
 
-void Cat::makeSound( void )
+void Cat::makeSound( void ) const
 {
   std::cout << "meowwwwww" << std::endl;
 }
 
-void Cat::getIdea( int index )
-{ 
-  std::cout << _brain->ideas[index] << std::endl;
+void Cat::setIdea( std::string idea, int index )
+{
+  _brain->setIdea(idea, index);
+}
 
-  return ;
+void Cat::getIdea( int index )
+{
+  _brain->getIdea(index);
 }
