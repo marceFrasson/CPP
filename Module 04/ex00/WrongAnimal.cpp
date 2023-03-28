@@ -16,7 +16,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal &source )
 
 WrongAnimal::~WrongAnimal( void )
 {
-  std::cout << "WrongAnimal destructor called." << std::endl;
+  std::cout << "WrongAnimal destructor called.\n" << std::endl;
 
   return ;
 }

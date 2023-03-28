@@ -16,7 +16,7 @@ Animal::Animal( const Animal &source )
 
 Animal::~Animal( void )
 {
-  std::cout << "Animal destructor called." << std::endl;
+  std::cout << "Animal destructor called.\n" << std::endl;
 
   return ;
 }

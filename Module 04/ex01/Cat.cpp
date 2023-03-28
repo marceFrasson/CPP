@@ -6,7 +6,7 @@ Cat::Cat( void )
   
   _brain = new Brain();
 
-  std::cout << "Cat constructor called." << std::endl;
+  std::cout << "Cat constructor called.\n" << std::endl;
 
   return ;
 }
@@ -15,7 +15,7 @@ Cat::Cat( const Cat &source ) : Animal( source )
 {
   *this = source;
 
-  std::cout << "Cat copy constructor called." << std::endl;
+  std::cout << "Cat copy constructor called.\n" << std::endl;
 
   return ;
 }

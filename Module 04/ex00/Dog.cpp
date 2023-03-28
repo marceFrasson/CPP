@@ -4,7 +4,7 @@ Dog::Dog( void )
 {
   _type = "Dog";
   
-  std::cout << "Dog constructor called." << std::endl;
+  std::cout << "Dog constructor called.\n" << std::endl;
 
   return ;
 }
@@ -12,6 +12,8 @@ Dog::Dog( void )
 Dog::Dog( const Dog &source ) : Animal( source )
 {
   *this = source;
+
+  std::cout << "Dog copy constructor called.\n" << std::endl;
 
   return ;
 }
