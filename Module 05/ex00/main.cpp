@@ -6,7 +6,7 @@
 /*   By: mfrasson <mfrasson@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 02:23:51 by mmoreira          #+#    #+#             */
-/*   Updated: 2023/03/23 03:44:17 by mfrasson         ###   ########.fr       */
+/*   Updated: 2023/03/29 20:47:01 by mfrasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main( void )
     std::cout << karen << std::endl;
   }
 
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   try
@@ -33,9 +33,9 @@ int	main( void )
     std::cout << john << std::endl;
   }
 
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   std::cout << std::endl << std::endl;
@@ -46,9 +46,9 @@ int	main( void )
     std::cout << karen << std::endl;
   }
 
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   try
@@ -57,9 +57,9 @@ int	main( void )
     std::cout << john << std::endl;
   }
 
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   std::cout << std::endl << std::endl;
@@ -72,9 +72,9 @@ int	main( void )
     std::cout << karen << std::endl;
   }
 
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   std::cout << std::endl;
@@ -87,9 +87,9 @@ int	main( void )
     std::cout << john << std::endl;
   }
 
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   std::cout << std::endl << std::endl;
@@ -101,9 +101,9 @@ int	main( void )
     karen.upGrade();
   }
 
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   std::cout << std::endl;
@@ -115,9 +115,9 @@ int	main( void )
     john.downGrade();
   }
   
-  catch (std::exception &exception)
+  catch (std::exception &ex)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << ex.what() << std::endl;
   }
 
   std::cout << std::endl;
