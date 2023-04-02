@@ -77,6 +77,7 @@ int main(int, char **)
 	{
 		numbers[i] = rand();
 	}
+	
 	{
 		int notEqual = 0;
 		for (int i = 0; i < MAX_VAL; i++)

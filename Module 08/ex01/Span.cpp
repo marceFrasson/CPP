@@ -12,8 +12,7 @@ Span::Span( unsigned int N ) : _size( N )
 
 Span::Span( const Span &source )
 {
-  operator=( source );
-
+  *this = source;
 
   return ;
 }

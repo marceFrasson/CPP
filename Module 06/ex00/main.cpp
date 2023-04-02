@@ -1,10 +1,10 @@
-#include "Conversion.hpp"
+#include "ScalarConverter.hpp"
 
 int main( int argc, char *argv[] )
 {
   if (argc != 2)
   {
-    std::cout << "\nusage: ./Conversion <stringToConvert>\n" << std::endl;
+    std::cout << "\nusage: ./ScalarConverter <stringToConvert>\n" << std::endl;
     std::cout << "<stringToConvert> can be a char, an int, a float or a double\n" << std::endl;
 
     return (1);
@@ -12,7 +12,7 @@ int main( int argc, char *argv[] )
 
   std::cout << std::endl;
 
-  Conversion string(argv[1]);
+  ScalarConverter::convert(argv[1]);
 
   std::cout << std::endl;
 

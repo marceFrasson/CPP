@@ -1,33 +1,36 @@
-#include "Conversion.hpp"
+#include "ScalarConverter.hpp"
 
-Conversion::Conversion( void )
+/*  .  *  .  *  .  *  .  *   ATTRIBUTES   *  .  *  .  *  .  *  .  */
+
+std::string ScalarConverter::_string = "";
+std::string ScalarConverter::_pseudoLiteral = "";
+char        ScalarConverter::_char = 0;
+int         ScalarConverter::_int = 0;
+float       ScalarConverter::_float = 0;
+double      ScalarConverter::_double = 0;
+bool        ScalarConverter::_nan = false;
+
+
+/*  .  *  .  *  .  *  .  *  CONSTRUCTORS  *  .  *  .  *  .  *  .  */
+
+ScalarConverter::ScalarConverter( void )
 {
   return ;
 }
 
-Conversion::Conversion( std::string toConvert )
-  : _string( toConvert ), _pseudoLiteral( "" ), _nan( false )
-{
-  _convert( );
-
-  print( );
-
-  return ;
-}
-
-Conversion::Conversion( const Conversion &source )
+ScalarConverter::ScalarConverter( const ScalarConverter &source )
 {
   *this = source;
 
   return ;
 }
 
-Conversion::~Conversion( void )
+ScalarConverter::~ScalarConverter( void )
 {
   return ;
 }
 
-Conversion &Conversion::operator=( const Conversion &rhs )
+ScalarConverter &ScalarConverter::operator=( const ScalarConverter &rhs )
 {
   if (this != &rhs)
   {
@@ -44,17 +47,24 @@ Conversion &Conversion::operator=( const Conversion &rhs )
 }
 
 
+/*  .  *  .  *  .  *  .  *     METHODS    *  .  *  .  *  .  *  .  */
 
-void Conversion::print( void )
+/* convert */
+
+void ScalarConverter::convert( const std::string &toConvert )
 {
-  if (_isPseudoLiteral() || _isNan() || _isString())
-    _printOthers( );
+  _string = toConvert;
+  _pseudoLiteral = "";
+  _nan = false;
 
-  else
-    _printConversion( );
+  _convert( );
+
+  _print( );
+
+  return ;
 }
 
-void Conversion::_convert( void )
+void ScalarConverter::_convert( void )
 {
   if (_string.size() == 1
 		&& _string.find_first_not_of("0123456789") != std::string::npos)
@@ -74,7 +84,19 @@ void Conversion::_convert( void )
 		_toInt( );
 }
 
-void Conversion::_printConversion( void )
+
+/* print */
+
+void ScalarConverter::_print( void )
+{
+  if (_isPseudoLiteral() || _isNan() || _isString())
+    _printOthers( );
+
+  else
+    _printScalarConverter( );
+}
+
+void ScalarConverter::_printScalarConverter( void )
 {
   if (!_int || !isprint(_char))
     std::cout << "char: Non displayable" << std::endl;
@@ -86,7 +108,7 @@ void Conversion::_printConversion( void )
   std::cout << "double: " << _double << std::endl;
 }
 
-void Conversion::_printOthers( void )
+void ScalarConverter::_printOthers( void )
 {
   std::cout << "char: impossible" << std::endl;
   std::cout << "int: impossible" << std::endl;
@@ -111,8 +133,9 @@ void Conversion::_printOthers( void )
 }
 
 
+/* isBool */
 
-bool Conversion::_isNan( void )
+bool ScalarConverter::_isNan( void )
 {
   if (_string != "nan")
     return (false);
@@ -122,7 +145,7 @@ bool Conversion::_isNan( void )
   return (true);
 }
 
-bool Conversion::_isString( void )
+bool ScalarConverter::_isString( void )
 {
   if (_string.length() > 1 &&
     _string.find_first_not_of("-+.f0123456789") != std::string::npos)
@@ -131,7 +154,7 @@ bool Conversion::_isString( void )
   return (false);
 }
 
-bool Conversion::_isPseudoLiteral( void )
+bool ScalarConverter::_isPseudoLiteral( void )
 {
   std::string pseudoLiterals[6] = { "-inf", "+inf", "nan",
                                    "-inff", "+inff", "nanf" };
@@ -155,8 +178,9 @@ bool Conversion::_isPseudoLiteral( void )
 }
 
 
+/* toType */
 
-void Conversion::_toChar( void )
+void ScalarConverter::_toChar( void )
 {
   _char = static_cast<char>(_string[0]);
 	_int = static_cast<int>(_char);
@@ -164,7 +188,7 @@ void Conversion::_toChar( void )
 	_double = static_cast<double>(_char);  
 }
 
-void Conversion::_toInt( void )
+void ScalarConverter::_toInt( void )
 {
   _int = static_cast<int>(atoi(_string.c_str()));
 	_char = static_cast<char>(_int);
@@ -172,7 +196,7 @@ void Conversion::_toInt( void )
 	_double = static_cast<double>(_int);
 }
 
-void Conversion::_toFloat( void )
+void ScalarConverter::_toFloat( void )
 {
   _float = static_cast<float>(atof(_string.c_str()));
 	_char = static_cast<char>(_float);
@@ -180,7 +204,7 @@ void Conversion::_toFloat( void )
 	_double = static_cast<double>(_float);
 }
 
-void Conversion::_toDouble( void )
+void ScalarConverter::_toDouble( void )
 {
   _double = static_cast<double>(strtod(_string.c_str(), NULL));
 	_char = static_cast<char>(_double);

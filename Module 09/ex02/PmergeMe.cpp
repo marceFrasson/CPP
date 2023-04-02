@@ -79,7 +79,6 @@ void PmergeMe<T>::mergeMe( typename T::iterator begin,
       *mergeIt = *leftIt;
       ++leftIt;
     }
-
     else
     {
       *mergeIt = *rightIt;

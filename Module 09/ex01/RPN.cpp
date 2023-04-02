@@ -84,3 +84,5 @@ const char* RPNCalculator::Error::what() const throw()
 {
   return ("Error");
 }
+
+12*2/2+5*6-13*-45**82/
