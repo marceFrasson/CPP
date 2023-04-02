@@ -1,7 +1,7 @@
 # Fixed-point numbers
 
 
-Fixed-point numbers are a representation of a number composed of an integer portion that comes before the decimal point (radix point), and a fractional portion that comes after. Raw bits represent the integer portion of a fixed-point number, while fractional bits represent the fractional portion.
+Fixed-point numbers are a representation of a number with decimal point stored in a integer memory. Its composed of an integer portion that comes before the decimal point (radix point), and a fractional portion that comes after. Raw bits represent the integer portion of a fixed-point number, while fractional bits represent the fractional portion.
 
 The representation of a regular integer number in fixed-point format considers its bit size, its fractional bits, and the number itself. For example, an 8-bit fixed-point number with 3 fractional bits. Taking the number 7, its fixed-point representation would be 56.0.
 
