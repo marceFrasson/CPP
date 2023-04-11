@@ -5,7 +5,7 @@ int main()
 
 	std::cout << std::endl;
 
-	unsigned int	N = 10;
+	unsigned int N = 10;
 	
   {
     Span sp = Span(5);
@@ -16,12 +16,12 @@ int main()
     sp.addNumber(9);
     sp.addNumber(11);
 
-    std::cout << "numbers: 6, 3, 17, 9, 11";
+    std::cout << "Numbers: 6, 3, 17, 9, 11";
 
     std::cout << std::endl << std::endl;
 
-		std::cout << "Ctr unsigned int =      min interval: " << sp.shortestSpan() << std::endl;
-		std::cout << "Ctr unsigned int =      max interval: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
   }
 
 	std::cout << std::endl;
@@ -49,8 +49,8 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Ctr unsigned int =      min interval: " << sp.shortestSpan() << std::endl;
-		std::cout << "Ctr unsigned int =      max interval: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -78,8 +78,8 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Ctr unsigned int =      min interval: " << sp.shortestSpan() << std::endl;
-		std::cout << "Ctr unsigned int =      max interval: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -107,8 +107,8 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Ctr unsigned int =      min interval: " << sp.shortestSpan() << std::endl;
-		std::cout << "Ctr unsigned int =      max interval: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
 	}
 
 	std::cout << std::endl << std::endl;
@@ -118,7 +118,7 @@ int main()
 
 		try
 		{
-			std::cout << "try shortestSpan in Span(0): ";
+			std::cout << "Try shortestSpan in Span(0): ";
 			std::cout << sp.shortestSpan() << std::endl;
 		}
 		catch(std::exception& ex)
@@ -128,7 +128,7 @@ int main()
 
 		try
 		{
-			std::cout << "try longestSpan in Span(0): ";
+			std::cout << "Try longestSpan  in Span(0): ";
 			std::cout << sp.longestSpan() << std::endl;
 		}
 		catch(std::exception& ex)
@@ -142,7 +142,7 @@ int main()
 
 		try
 		{
-			std::cout << "try shortestSpan in Span(1): ";
+			std::cout << "Try shortestSpan in Span(1): ";
 			std::cout << sp.shortestSpan() << std::endl;
 		}
 		catch(std::exception& ex)
@@ -152,7 +152,7 @@ int main()
 
 		try
 		{
-			std::cout << "try longestSpan in Span(1): ";
+			std::cout << "Try longestSpan  in Span(1): ";
 			std::cout << sp.longestSpan() << std::endl;
 		}
 		catch(std::exception& ex)
@@ -164,7 +164,7 @@ int main()
 
 		try
 		{
-			std::cout << "try addNumber in full Span: ";
+			std::cout << "Try addNumber  in full Span: ";
 
 			for (unsigned int i = 0; i < 12; i++)
 				sp.addNumber(i);
@@ -188,10 +188,10 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Test with random Span(10000)" << std::endl << std::endl;
+		std::cout << "Test with random Span(10.000)" << std::endl << std::endl;
 
-		std::cout << "min interval: " << sp.shortestSpan() << std::endl;
-		std::cout << "max interval: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
 	}
 
 	{
@@ -205,10 +205,10 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Test with random Span(100000)" << std::endl << std::endl;
+		std::cout << "Test with random Span(100.000)" << std::endl << std::endl;
 
-		std::cout << "min interval: " << sp.shortestSpan() << std::endl;
-		std::cout << "max interval: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
 	}
 
 	{
@@ -222,14 +222,14 @@ int main()
 
 		std::cout << std::endl << std::endl;
 
-		std::cout << "Test with random Span(1000000)" << std::endl << std::endl;
+		std::cout << "Test with random Span(1.000.000)" << std::endl << std::endl;
     
-		std::cout << "min interval: " << sp.shortestSpan() << std::endl;
-		std::cout << "max interval: " << sp.longestSpan() << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
 	}
 
   std::cout << std::endl;
 
-	return 0;
+	return (0);
 
 }

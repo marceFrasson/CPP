@@ -3,7 +3,7 @@ SRC = 	main.cpp \
 
 DEPS =	Span.hpp
 
-NAME = span
+NAME = Span
 
 CC = c++
 
@@ -14,7 +14,7 @@ FLAGS =	-std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $^ -o $@
 	@echo ""
-	@echo "|		span created		|"
+	@echo "|		Span created		|"
 	@echo ""
 
 %.o: %.cpp $(DEPS)
@@ -25,14 +25,14 @@ all: $(NAME)
 clean:
 	@rm -f $(NAME)
 	@echo ""
-	@echo "|		span deleted		|"
+	@echo "|		Span deleted		|"
 	@echo ""
 
 fclean:
 	@rm -f $(NAME)
 	@rm -f *.o
 	@echo ""
-	@echo "|		span deleted		|"
+	@echo "|		Span deleted		|"
 	@echo ""
 
 re: fclean all

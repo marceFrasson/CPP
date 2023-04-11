@@ -34,6 +34,7 @@ void Span::addNumber( int number )
 {
   if (_vec.size() >= _size)
     throw fullSpanException();
+    
   _vec.push_back(number);
 }
 
@@ -46,9 +47,11 @@ void Span::addNumbers(  vector::iterator firstNumber, vector::iterator lastNumbe
       _vec.push_back(*firstNumber);
       firstNumber++;
     }
+
     else
       throw fullSpanException();
   }
+  
   _vec.push_back(*lastNumber);
 }
 
