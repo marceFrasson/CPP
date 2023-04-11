@@ -24,7 +24,7 @@ class MutantStack : public std::stack< T, container >
 
     typedef typename container::iterator iterator;
 
-    typename container::iterator begin( void ) { return (this->c.begin()); } ;
+    typename container::const_iterator begin( void ) const { return (this->c.begin()); } ;
     typename container::iterator end( void ) { return (this->c.end()); } ;
 };
 

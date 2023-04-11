@@ -1,7 +1,6 @@
-#include "Data.hpp"
+#include "Serializer.hpp"
 
-int main()
-
+int main( void )
 {
     Data       data;
     Data      *deserialized = NULL;
@@ -17,7 +16,7 @@ int main()
     std::cout << "------- Serialized Data: -------" << std::endl;
     std::cout << std::endl;
 
-    serialized = serialize( &data );
+    serialized = Serializer::serialize( &data );
 
     std::cout << serialized << std::endl;
 
@@ -25,12 +24,11 @@ int main()
     std::cout << "------ Deserialized Data: ------" << std::endl;
     std::cout << std::endl;
 
-    deserialized = deserialize( serialized );
+    deserialized = Serializer::deserialize( serialized );
     
     std::cout << *deserialized << std::endl;
 
     std::cout << std::endl;
     
     return (0);
-    
 }

@@ -19,8 +19,8 @@ int main( void )
 
   std::cout << std::endl;
 
-  std::string c = "chaine1";
-  std::string d = "chaine2";
+  std::string c = "abcdef";
+  std::string d = "abcdea";
 
   std::cout << "c = " << c << ", d = " << d << std::endl << std::endl;
 

@@ -13,12 +13,24 @@ class Array
 
   public:
 
-    Array( void ) : _size( 0 ), _array( NULL ) {};
-    Array( unsigned int n ) : _size( n ), _array( new T[n] ) {};
-    Array( const Array &source ) : _array( NULL ) { operator=( source ); };
-    ~Array( void ) { delete[] _array; };
+    Array( void ) : _size( 0 ), _array( new T[0] ) {};
 
-    unsigned int size( void ) const { return (_size); };
+    Array( unsigned int n ) : _size( n ), _array( new T[n] ) {};
+
+    Array( const Array &source ) : _size( source._size ), _array( NULL )
+    {
+      *this = source;
+    };
+
+    ~Array( void )
+    {
+      delete[] _array;
+    };
+
+    unsigned int size( void ) const
+    {
+      return (_size);
+    };
 
     Array &operator=( const Array &rhs )
     {
@@ -29,13 +41,8 @@ class Array
         _size = rhs._size;
         _array = new T[_size];
         
-        unsigned int i = 0;
-
-        while (i < _size)
-        {
+        for (unsigned int i = 0; i < _size; i++)
           _array[i] = rhs._array[i];
-          i++;
-        }
       }
 
       return (*this);

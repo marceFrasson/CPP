@@ -1,10 +1,5 @@
 #include "iter.hpp"
 
-void printElement( int n )
-{
-  std::cout << n << " ";
-}
-
 int main( void )
 {
 
@@ -13,7 +8,7 @@ int main( void )
 
   std::cout << std::endl;
 
-  iter(array, length, printElement);
+  iter(array, length, printElement<int>);
 
   std::cout << std::endl << std::endl;
 

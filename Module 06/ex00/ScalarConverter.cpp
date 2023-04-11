@@ -1,9 +1,8 @@
 #include "ScalarConverter.hpp"
 
-/*  .  *  .  *  .  *  .  *   ATTRIBUTES   *  .  *  .  *  .  *  .  */
-
 std::string ScalarConverter::_string = "";
 std::string ScalarConverter::_pseudoLiteral = "";
+
 char        ScalarConverter::_char = 0;
 int         ScalarConverter::_int = 0;
 float       ScalarConverter::_float = 0;
@@ -11,11 +10,8 @@ double      ScalarConverter::_double = 0;
 bool        ScalarConverter::_nan = false;
 
 
-/*  .  *  .  *  .  *  .  *  CONSTRUCTORS  *  .  *  .  *  .  *  .  */
-
 ScalarConverter::ScalarConverter( void )
 {
-  return ;
 }
 
 ScalarConverter::ScalarConverter( const ScalarConverter &source )
@@ -27,7 +23,6 @@ ScalarConverter::ScalarConverter( const ScalarConverter &source )
 
 ScalarConverter::~ScalarConverter( void )
 {
-  return ;
 }
 
 ScalarConverter &ScalarConverter::operator=( const ScalarConverter &rhs )
@@ -40,16 +35,11 @@ ScalarConverter &ScalarConverter::operator=( const ScalarConverter &rhs )
     _float = rhs._float;
     _double = rhs._double;
     _nan = rhs._nan;
-    _nan = rhs._nan;
   }
 
   return (*this);
 }
 
-
-/*  .  *  .  *  .  *  .  *     METHODS    *  .  *  .  *  .  *  .  */
-
-/* convert */
 
 void ScalarConverter::convert( const std::string &toConvert )
 {
@@ -85,8 +75,6 @@ void ScalarConverter::_convert( void )
 }
 
 
-/* print */
-
 void ScalarConverter::_print( void )
 {
   if (_isPseudoLiteral() || _isNan() || _isString())
@@ -100,6 +88,7 @@ void ScalarConverter::_printScalarConverter( void )
 {
   if (!_int || !isprint(_char))
     std::cout << "char: Non displayable" << std::endl;
+  
   else
     std::cout << "char: '" << _char << "'" << std::endl;
   
@@ -132,8 +121,6 @@ void ScalarConverter::_printOthers( void )
   }
 }
 
-
-/* isBool */
 
 bool ScalarConverter::_isNan( void )
 {
@@ -177,8 +164,6 @@ bool ScalarConverter::_isPseudoLiteral( void )
   return (false);
 }
 
-
-/* toType */
 
 void ScalarConverter::_toChar( void )
 {

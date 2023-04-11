@@ -23,7 +23,7 @@ RPNCalculator &RPNCalculator::operator=( const RPNCalculator &rhs )
   return (*this);
 }
 
-std::string RPNCalculator::evaluate( std::string expression )
+double RPNCalculator::evaluate( std::string expression )
 {
   std::stack<double> operandStack;
   std::string token(expression);
@@ -65,19 +65,21 @@ std::string RPNCalculator::evaluate( std::string expression )
       throw std::runtime_error("\nError: invalid character.\n");
   }
   
-  std::stringstream resultStream;
+  // std::stringstream resultStream;
 
-  while (!operandStack.empty())
-  {
-    resultStream << operandStack.top();
+  // while (!operandStack.empty())
+  // {
+  //   resultStream << operandStack.top();
 
-    operandStack.pop();
+  //   operandStack.pop();
     
-    if (!operandStack.empty())
-      resultStream << " ";
-  }
+  //   if (!operandStack.empty())
+  //     resultStream << " ";
+  // }
 
-    return resultStream.str();
+  //   return resultStream.str();
+
+    return operandStack.top();
 }
 
 const char* RPNCalculator::Error::what() const throw()
@@ -85,4 +87,3 @@ const char* RPNCalculator::Error::what() const throw()
   return ("Error");
 }
 
-12*2/2+5*6-13*-45**82/

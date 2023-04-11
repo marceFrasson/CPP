@@ -12,13 +12,8 @@ class ScalarConverter
 {
   private:
 
-    /*  .  *  .  *  .  *   CONSTRUCTORS   *  .  *  .  *  .  */
-
     ScalarConverter( void );
     ScalarConverter( const ScalarConverter &source );
-
-
-    /*  .  *  .  *  .  *    ATTRIBUTES    *  .  *  .  *  .  */
 
     static std::string _string;
     static std::string _pseudoLiteral;
@@ -29,29 +24,15 @@ class ScalarConverter
     static double      _double;
     static bool        _nan;
 
-
-    /*  .  *  .  *  .  *      METHODS     *  .  *  .  *  .  */
-
-    /* convert */
-
     static void _convert( void );
-    
-
-    /* print */
 
     static void _print( void );
     static void _printOthers( void );
     static void _printScalarConverter( void );
-
     
-    /* isBool */
-
     static bool _isNan( void );
     static bool _isString( void );
     static bool _isPseudoLiteral( void );
-
-
-    /* toType */
 
     static void _toChar( void );
     static void _toInt( void );
@@ -60,17 +41,10 @@ class ScalarConverter
 
   public:
 
-    /*  .  *  .  *  .  *   CONSTRUCTORS   *  .  *  .  *  .  */
-
     ~ScalarConverter( void );
 
     ScalarConverter &operator=( const ScalarConverter &rhs );
 
-
-    /*  .  *  .  *  .  *      METHOD      *  .  *  .  *  .  */
-
-    /* convert */
-    
     static void convert( const std::string &toConvert );
 };
 
