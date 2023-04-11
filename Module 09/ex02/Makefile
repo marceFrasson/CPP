@@ -3,13 +3,13 @@ SRC = 	main.cpp \
 
 DEPS =	PmergeMe.hpp
 
-NAME = PmergeMe
+NAME =	PmergeMe
 
 CC = c++
 
 OBJ = $(SRC:.cpp=.o)
 
-FLAGS =  -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
+FLAGS =	-std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 
 $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $^ -o $@
