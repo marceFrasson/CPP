@@ -79,10 +79,14 @@ int main( void )
 
     std::cout << std::endl << "   numbers: ";
 
+    long unsigned int i = 1;
 
     while (it != ite)
     {
-      std::cout << *it << ", ";
+      std::cout << *it;
+
+      if (i++ < mstack.size())
+        std::cout << ", ";
 
       ++it;
     }

@@ -12,7 +12,7 @@ class MutantStack : public std::stack< T, container >
 
     MutantStack( void ) : std::stack< T, container >() {};
     MutantStack( const MutantStack &source ) : std::stack< T, container >( source ) {};
-    ~MutantStack( void ) {};
+    virtual ~MutantStack( void ) {};
 
     MutantStack &operator=( const MutantStack &rhs )
     {
