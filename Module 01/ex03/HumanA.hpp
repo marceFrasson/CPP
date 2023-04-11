@@ -5,7 +5,6 @@
 
 class HumanA
 {
-
   private:
 
     Weapon      &_weapon;
@@ -17,7 +16,6 @@ class HumanA
     ~HumanA( void );
 
     void attack( void );
-
 };
 
 #endif

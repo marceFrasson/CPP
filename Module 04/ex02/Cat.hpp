@@ -23,7 +23,6 @@ class Cat : public Animal
 
     void setIdea( std::string idea, int index );
     void getIdea( int index );
-
 };
 
 #endif

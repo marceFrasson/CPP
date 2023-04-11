@@ -5,7 +5,6 @@
 
 class Contact
 {
-
   private:
 
     int         _index;
@@ -33,7 +32,6 @@ class Contact
     std::string getNickname( void );
     std::string getPhoneNumber( void );
     std::string getDarkestSecret( void );
-
 };
 
 #endif

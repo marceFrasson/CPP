@@ -10,7 +10,6 @@
 
 class Intern
 {
-
   private:
 
     AForm *_makePresidentialPardonForm( std::string target );
@@ -26,7 +25,6 @@ class Intern
     Intern &operator=( const Intern &rhs );
 
     AForm *makeForm( std::string name, std::string target );
-
 };
 
 #endif

@@ -7,7 +7,6 @@
 
 class RobotomyRequestForm : public AForm
 {
-
   private:
 
     std::string _target;
@@ -22,7 +21,6 @@ class RobotomyRequestForm : public AForm
     RobotomyRequestForm &operator=( const RobotomyRequestForm &rhs );
 
     bool execute( const Bureaucrat &executor ) const;
-
 };
 
 #endif

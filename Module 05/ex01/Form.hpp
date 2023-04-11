@@ -6,7 +6,6 @@
 
 class Form
 {
-
   private:
 
     const std::string _name;
@@ -42,7 +41,6 @@ class Form
 
         virtual const char* what() const throw();
     };
-
 };
 
 std::ostream &operator<<( std::ostream &outputSream, const Form &form );

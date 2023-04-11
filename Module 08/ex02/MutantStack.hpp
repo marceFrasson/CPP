@@ -24,8 +24,23 @@ class MutantStack : public std::stack< T, container >
 
     typedef typename container::iterator iterator;
 
-    typename container::const_iterator begin( void ) const { return (this->c.begin()); } ;
-    typename container::iterator end( void ) { return (this->c.end()); } ;
+    iterator begin( void ) { return (this->c.begin()); } ;
+    iterator end( void ) { return (this->c.end()); } ;
+
+    typedef typename container::reverse_iterator reverse_iterator;
+
+    reverse_iterator rbegin( void ) { return (this->c.rbegin()); } ;
+    reverse_iterator rend( void ) { return (this->c.rend()); } ;
+
+    typedef typename container::const_iterator const_iterator;
+
+    const_iterator begin( void ) const { return (this->c.begin()); } ;
+    const_iterator end( void ) const { return (this->c.end()); } ;
+
+    typedef typename container::const_reverse_iterator const_reverse_iterator;
+
+    const_reverse_iterator rbegin( void ) const { return (this->c.rbegin()); } ;
+    const_reverse_iterator rend( void ) const { return (this->c.rend()); } ;
 };
 
 #endif

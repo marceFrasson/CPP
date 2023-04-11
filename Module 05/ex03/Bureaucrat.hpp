@@ -44,7 +44,6 @@ class Bureaucrat
 
         virtual const char* what() const throw();
     };
-
 };
 
 #endif

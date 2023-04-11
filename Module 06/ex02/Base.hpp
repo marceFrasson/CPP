@@ -7,11 +7,9 @@
 
 class Base
 {
-
   public:
 
     virtual ~Base( void ) {}
-
 };
 
 class A : public Base {};

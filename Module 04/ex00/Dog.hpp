@@ -14,7 +14,6 @@ class Dog : public Animal
     Dog &operator=( const Dog &rhs );
   
     virtual void makeSound( void ) const;
-
 };
 
 #endif

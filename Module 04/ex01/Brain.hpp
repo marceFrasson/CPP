@@ -22,7 +22,6 @@ class Brain
 
     void setIdea( std::string idea, int index );
     void getIdea( int index );
-
 };
 
 #endif

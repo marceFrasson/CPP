@@ -27,11 +27,6 @@ class Array
       delete[] _array;
     };
 
-    unsigned int size( void ) const
-    {
-      return (_size);
-    };
-
     Array &operator=( const Array &rhs )
     {
       if (this != &rhs)
@@ -56,6 +51,11 @@ class Array
       return (_array[index]);
     }
 
+    unsigned int size( void ) const
+    {
+      return (_size);
+    };
+
     class indexOutOfBoundsException : public std::exception
 		{
 			public:
@@ -65,7 +65,6 @@ class Array
           return ("Index out of bounds");
         }
 		};
-
 };
 
 #endif

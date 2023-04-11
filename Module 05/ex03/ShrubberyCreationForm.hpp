@@ -6,7 +6,6 @@
 
 class ShrubberyCreationForm : public AForm
 {
-
   private:
 
     std::string _target;
@@ -21,7 +20,6 @@ class ShrubberyCreationForm : public AForm
     ShrubberyCreationForm &operator=( const ShrubberyCreationForm &rhs );
 
     bool execute( const Bureaucrat &executor ) const;
-
 };
 
 #endif

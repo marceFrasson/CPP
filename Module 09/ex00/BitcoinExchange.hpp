@@ -12,7 +12,6 @@ struct BitcoinExchange
 {
 
   std::map<std::string, double> _map;
-
 };
 
 void          bitcoinExchange( std::string csvFileName, std::string txtFileName );

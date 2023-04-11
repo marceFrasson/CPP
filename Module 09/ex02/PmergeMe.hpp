@@ -9,7 +9,6 @@
 template <typename T>
 class PmergeMe
 {
-
   public:
 
     PmergeMe( void );
@@ -24,7 +23,6 @@ class PmergeMe
     void mergeMe( typename T::iterator begin, typename T::iterator middle,
                           typename T::iterator end );
     void printMe( T &container );
-
 };
 
 #endif

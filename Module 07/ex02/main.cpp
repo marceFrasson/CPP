@@ -28,35 +28,32 @@ int main( void )
 		mirror[i] = value;
 	}
 
-	{
-		Array<int> temp = numbers;
-		Array<int> test(temp);
+	Array<int> temp = numbers;
+	Array<int> test(temp);
 
-		temp[0] = temp[0] + 1;
-		
-		if (temp[0] == numbers[0] || temp[0] == test[0])
-			std::cout << "Deep copy fail!" << std::endl;
-		else
-			std::cout << "Deep copy successful!" << std::endl;
-	}
+	temp[0] = temp[0] + 1;
+	
+	if (temp[0] == numbers[0] || temp[0] == test[0])
+		std::cout << "Deep copy fail!" << std::endl;
+	else
+		std::cout << "Deep copy successful!" << std::endl;
 
 	std::cout << std::endl;
 
-	{
-		int equal = 1;
+	int equal = 1;
 
-		for (int i = 0; i < MAX_VAL; i++)
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		if (mirror[i] != numbers[i])
 		{
-			if (mirror[i] != numbers[i])
-			{
-				equal = 0;
-				std::cerr << "Didn't save the same value!" << std::endl;
-				return 1;
-			}
+			equal = 0;
+			std::cerr << "Didn't save the same value!" << std::endl;
+			return 1;
 		}
-		if (equal)
-			std::cout << "The same values were saved!" << std::endl;
 	}
+
+	if (equal)
+		std::cout << "The same values were saved!" << std::endl;
 	
 	std::cout << std::endl;
 
@@ -76,25 +73,23 @@ int main( void )
 	for (int i = 0; i < MAX_VAL; i++)
 		numbers[i] = rand();
 	
+	int notEqual = 0;
+	
+	for (int i = 0; i < MAX_VAL; i++)
 	{
-		int notEqual = 0;
-		
-		for (int i = 0; i < MAX_VAL; i++)
-		{
-			if (mirror[i] == numbers[i])
-				notEqual++;
-		}
-
-		if (notEqual != MAX_VAL)
-			std::cout << "operator [] works!" << std::endl;
-		else
-			std::cout << "operator [] doesn't work!" << std::endl;
+		if (mirror[i] == numbers[i])
+			notEqual++;
 	}
+
+	if (notEqual != MAX_VAL)
+		std::cout << "operator [] works!" << std::endl;
+	else
+		std::cout << "operator [] doesn't work!" << std::endl;
+
+	std::cout << std::endl;
 
 	delete a;
 	delete[] mirror;
-
-	std::cout << std::endl;
 
 	return (0);
 	

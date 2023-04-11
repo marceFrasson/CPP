@@ -20,7 +20,6 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm &operator=( const PresidentialPardonForm &rhs );
 
 		bool execute( const Bureaucrat &executor ) const;
-
 };
 
 #endif

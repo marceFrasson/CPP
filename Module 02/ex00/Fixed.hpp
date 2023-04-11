@@ -5,7 +5,6 @@
 
 class Fixed
 {
-
   private:
 
     int               _rawBits;

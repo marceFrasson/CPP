@@ -6,7 +6,6 @@
 
 class PhoneBook
 {
-
   private:
 
     Contact _contacts[8];
@@ -28,7 +27,6 @@ class PhoneBook
     void  printIndex( int index );
     void  printColumn( std::string stringToPrint );
     void  printPhoneBook( int i, PhoneBook phoneBook );
-
 };
 
 #endif

@@ -5,7 +5,6 @@
 
 class HumanB
 {
-
   private:
 
     Weapon      *_weapon;
@@ -18,7 +17,6 @@ class HumanB
 
     void attack( void );
     void setWeapon( Weapon &weapon );
-
 };
 
 #endif

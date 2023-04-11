@@ -26,7 +26,6 @@ class RPNCalculator
 
         virtual const char* what() const throw();
     };
-
 };
 
 #endif

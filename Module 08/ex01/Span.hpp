@@ -7,7 +7,6 @@
 
 class Span
 {
-
   private:
 
     typedef std::vector<int> vector;
@@ -43,7 +42,6 @@ class Span
       
         virtual const char* what() const throw();
     };
-
 };
 
 #endif

@@ -5,7 +5,6 @@
 
 class Weapon
 {
-
   private:
 
     std::string _type;
@@ -17,7 +16,6 @@ class Weapon
 
     const std::string &getType( void );
     void setType( std::string type );
-
 };
 
 #endif
