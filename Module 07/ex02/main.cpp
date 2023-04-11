@@ -13,11 +13,9 @@ int main( void )
 
 	std::cout << "Initialized value by default = " << *a << std::endl;
 
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	/*
-	**
-	*/
+
 
 	std::cout << "\n| assigning value test |\n" << std::endl;
 
@@ -41,7 +39,9 @@ int main( void )
 		if (mirror[i] != numbers[i])
 		{
 			equal = 0;
+
 			std::cerr << "Didn't save the same value!" << std::endl;
+			
 			return (1);
 		}
 	}
@@ -49,11 +49,10 @@ int main( void )
 	if (equal)
 		std::cout << "The same values were saved!" << std::endl;
 	
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	/*
-	**
-	*/
+	
+	
 
 	std::cout << "\n|    deep copy test    |\n" << std::endl;
 
@@ -64,14 +63,14 @@ int main( void )
 	
 	if (temp[0] == numbers[0] || temp[0] == test[0])
 		std::cout << "Deep copy fail!" << std::endl;
+
 	else
 		std::cout << "Deep copy successful!" << std::endl;
 
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	/*
-	**
-	*/
+	
+	
 
 	std::cout << "\n|   index bounds test  |\n" << std::endl;
 
@@ -103,11 +102,10 @@ int main( void )
 		std::cerr << excep.what() << std::endl;
 	}
 
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	/*
-	**
-	*/
+	
+	
 
 	std::cout << "\n|   operator [] test   |\n" << std::endl;
 
@@ -124,14 +122,14 @@ int main( void )
 
 	if (notEqual != ARRAY_SIZE)
 		std::cout << "Operator [] works!" << std::endl;
+
 	else
 		std::cout << "Operator [] doesn't work!" << std::endl;
 
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	/*
-	**
-	*/
+	
+	
 
 	std::cout << "\n|    char array test   |\n" << std::endl;
 
@@ -165,11 +163,7 @@ int main( void )
 		}
 	}
 
-	std::cout << std::endl << std::endl;
-
-	/*
-	**
-	*/
+	std::cout << '\n' << std::endl;
 
 	delete a;
 	delete[] mirror;
