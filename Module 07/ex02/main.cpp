@@ -15,6 +15,9 @@ int main( void )
 
 	std::cout << std::endl;
 
+	/*
+	**
+	*/
 
 	std::cout << "\n| assigning value test |\n" << std::endl;
 
@@ -48,6 +51,9 @@ int main( void )
 	
 	std::cout << std::endl;
 
+	/*
+	**
+	*/
 
 	std::cout << "\n|    deep copy test    |\n" << std::endl;
 
@@ -63,6 +69,9 @@ int main( void )
 
 	std::cout << std::endl;
 
+	/*
+	**
+	*/
 
 	std::cout << "\n|   index bounds test  |\n" << std::endl;
 
@@ -96,6 +105,9 @@ int main( void )
 
 	std::cout << std::endl;
 
+	/*
+	**
+	*/
 
 	std::cout << "\n|   operator [] test   |\n" << std::endl;
 
@@ -117,6 +129,9 @@ int main( void )
 
 	std::cout << std::endl;
 
+	/*
+	**
+	*/
 
 	std::cout << "\n|    char array test   |\n" << std::endl;
 
@@ -151,6 +166,10 @@ int main( void )
 	}
 
 	std::cout << std::endl << std::endl;
+
+	/*
+	**
+	*/
 
 	delete a;
 	delete[] mirror;
