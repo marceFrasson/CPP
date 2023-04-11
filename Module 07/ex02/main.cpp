@@ -2,31 +2,54 @@
 #include <cstdlib>
 #include <ctime>
 
-#define MAX_VAL 750
+#define ARRAY_SIZE 200
 
 int main( void )
 {
 
-	std::cout << std::endl;
+	std::cout << "\n|  default value test  |\n" << std::endl;
 
 	int *a = new int();
 
-	std::cout << "Element initialized by default = " << *a << std::endl;
+	std::cout << "Initialized value by default = " << *a << std::endl;
 
 	std::cout << std::endl;
 
-	Array<int> numbers(MAX_VAL);
-	int *mirror = new int[MAX_VAL];
+
+	std::cout << "\n| assigning value test |\n" << std::endl;
+
+	Array<int> numbers(ARRAY_SIZE);
+	int *mirror = new int[ARRAY_SIZE];
 
 	srand(time(NULL));
 	
-	for (int i = 0; i < MAX_VAL; i++)
+	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
 		const int value = rand();
 
 		numbers[i] = value;
 		mirror[i] = value;
 	}
+
+	int equal = 1;
+
+	for (int i = 0; i < ARRAY_SIZE; i++)
+	{
+		if (mirror[i] != numbers[i])
+		{
+			equal = 0;
+			std::cerr << "Didn't save the same value!" << std::endl;
+			return (1);
+		}
+	}
+
+	if (equal)
+		std::cout << "The same values were saved!" << std::endl;
+	
+	std::cout << std::endl;
+
+
+	std::cout << "\n|    deep copy test    |\n" << std::endl;
 
 	Array<int> temp = numbers;
 	Array<int> test(temp);
@@ -40,53 +63,94 @@ int main( void )
 
 	std::cout << std::endl;
 
-	int equal = 1;
 
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		if (mirror[i] != numbers[i])
-		{
-			equal = 0;
-			std::cerr << "Didn't save the same value!" << std::endl;
-			return 1;
-		}
-	}
+	std::cout << "\n|   index bounds test  |\n" << std::endl;
 
-	if (equal)
-		std::cout << "The same values were saved!" << std::endl;
-	
-	std::cout << std::endl;
+	int arraySize = ARRAY_SIZE;
 
 	try
 	{
-		std::cout << "\"numbers[MAX_VAL] = 0;\" => ";
+		std::cout << "\"numbers[arraySize-1] = 0\" => ";
 
-		numbers[MAX_VAL] = 0;
+		numbers[arraySize - 1] = 0;
+
+		std::cout << "numbers[arraySize-1] = " << numbers[arraySize - 1] << std::endl;
 	}
 	catch (const std::exception &excep)
 	{
-		std::cerr << excep.what() << '\n';
+		std::cerr << excep.what() << std::endl;
+	}
+
+	try
+	{
+		std::cout << "\"numbers[arraySize]   = 0\" => ";
+
+		numbers[arraySize] = 0;
+
+		std::cout << "numbers[arraySize] = " << numbers[arraySize] << std::endl;
+	}
+	catch (const std::exception &excep)
+	{
+		std::cerr << excep.what() << std::endl;
 	}
 
 	std::cout << std::endl;
 
-	for (int i = 0; i < MAX_VAL; i++)
+
+	std::cout << "\n|   operator [] test   |\n" << std::endl;
+
+	for (int i = 0; i < ARRAY_SIZE; i++)
 		numbers[i] = rand();
 	
 	int notEqual = 0;
 	
-	for (int i = 0; i < MAX_VAL; i++)
+	for (int i = 0; i < ARRAY_SIZE; i++)
 	{
 		if (mirror[i] == numbers[i])
 			notEqual++;
 	}
 
-	if (notEqual != MAX_VAL)
-		std::cout << "operator [] works!" << std::endl;
+	if (notEqual != ARRAY_SIZE)
+		std::cout << "Operator [] works!" << std::endl;
 	else
-		std::cout << "operator [] doesn't work!" << std::endl;
+		std::cout << "Operator [] doesn't work!" << std::endl;
 
 	std::cout << std::endl;
+
+
+	std::cout << "\n|    char array test   |\n" << std::endl;
+
+	std::cout << "Expected char array: a b c d e" << std::endl;
+
+	Array<char> charArray(5);
+
+	for (unsigned int i = 0; i < charArray.size(); i++)
+	{
+		try
+		{
+			charArray[i] = 'a' + i;
+		}
+		catch(const std::exception &excep)
+		{
+			std::cerr << excep.what() << std::endl;
+		}
+	}
+
+	std::cout << "Assigned char array: ";
+
+	for (unsigned int i = 0; i < charArray.size(); i++)
+	{
+		try
+		{
+			std::cout << charArray[i] << " ";
+		}
+		catch(const std::exception &excep)
+		{
+			std::cerr << excep.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl << std::endl;
 
 	delete a;
 	delete[] mirror;
