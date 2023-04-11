@@ -6,7 +6,7 @@
 /*   By: mfrasson <mfrasson@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 02:23:51 by mmoreira          #+#    #+#             */
-/*   Updated: 2023/01/25 20:00:42 by mfrasson         ###   ########.fr       */
+/*   Updated: 2023/04/11 06:51:31 by mfrasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,27 @@ int	main( void )
 	{
 		Form graduation("Graduation", -12, 2);
 	}
-	catch (std::exception &ex)
+	catch (std::exception &excep)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << excep.what() << std::endl;
 	}
 
 	try
 	{
 		Form graduation("Graduation", 2, -12);
 	}
-	catch (std::exception &ex)
+	catch (std::exception &excep)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << excep.what() << std::endl;
 	}
 
 	try
 	{
 		Form graduation("Graduation", 0, 0);
 	}
-	catch (std::exception &ex)
+	catch (std::exception &excep)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << excep.what() << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -49,27 +49,27 @@ int	main( void )
 	{
 		Form graduation("Graduation", 160, 145);
 	}
-	catch (std::exception &ex)
+	catch (std::exception &excep)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << excep.what() << std::endl;
 	}
 
 	try
 	{
 		Form graduation("Graduation", 145, 160);
 	}
-	catch (std::exception &ex)
+	catch (std::exception &excep)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << excep.what() << std::endl;
 	}
 
 	try
 	{
 		Form graduation("Graduation", 151, 151);
 	}
-	catch (std::exception &ex)
+	catch (std::exception &excep)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << excep.what() << std::endl;
 	}
 	
 	std::cout << std::endl;
@@ -79,9 +79,9 @@ int	main( void )
 		Form graduation("Graduation", 1, 100);
 		std::cout << graduation << std::endl;
 	}
-	catch (std::exception &ex)
+	catch (std::exception &excep)
 	{
-		std::cout << ex.what() << std::endl;
+		std::cout << excep.what() << std::endl;
 	}
 
 	Bureaucrat karen("Karen", 100);

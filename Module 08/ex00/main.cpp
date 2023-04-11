@@ -23,9 +23,9 @@ int main()
       vecIterator = easyfind(vec, 4);
       std::cout << "found: " << *vecIterator << std::endl;
     }
-    catch(const std::exception& e)
+    catch(const std::exception &excep)
     {
-      std::cerr << e.what() << '\n';
+      std::cerr << excep.what() << '\n';
     }
     
     std::cout << std::endl << "easyfind 7" << std::endl;
@@ -35,9 +35,9 @@ int main()
       vecIterator = easyfind(vec, 7);
       std::cout << "found: " << *vecIterator << std::endl;
     }
-    catch(const std::exception& e)
+    catch(const std::exception &excep)
     {
-      std::cerr << e.what() << '\n';
+      std::cerr << excep.what() << '\n';
     }
   }
 
@@ -54,9 +54,9 @@ int main()
       listIterator = easyfind(list, 2);
       std::cout << "found: " << *listIterator << std::endl;
     }
-    catch(const std::exception& e)
+    catch(const std::exception &excep)
     {
-      std::cerr << e.what() << '\n';
+      std::cerr << excep.what() << '\n';
     }
     
     std::cout << std::endl << "easyfind 9" << std::endl;
@@ -66,9 +66,9 @@ int main()
       listIterator = easyfind(list, 9);
       std::cout << "found: " << *listIterator << std::endl;
     }
-    catch(const std::exception& e)
+    catch(const std::exception &excep)
     {
-      std::cerr << e.what() << '\n';
+      std::cerr << excep.what() << '\n';
     }
   }
 
@@ -85,9 +85,9 @@ int main()
       deqIterator = easyfind(deq, 5);
       std::cout << "found: " << *deqIterator << std::endl;
     }
-    catch(const std::exception& e)
+    catch(const std::exception &excep)
     {
-      std::cerr << e.what() << '\n';
+      std::cerr << excep.what() << '\n';
     }
     
     std::cout << std::endl << "easyfind 8" << std::endl;
@@ -97,9 +97,9 @@ int main()
       deqIterator = easyfind(deq, 8);
       std::cout << "found: " << *deqIterator << std::endl;
     }
-    catch(const std::exception& e)
+    catch(const std::exception &excep)
     {
-      std::cerr << e.what() << '\n';
+      std::cerr << excep.what() << '\n';
     }
   }
 

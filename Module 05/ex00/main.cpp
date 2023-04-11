@@ -6,7 +6,7 @@
 /*   By: mfrasson <mfrasson@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 02:23:51 by mmoreira          #+#    #+#             */
-/*   Updated: 2023/03/29 22:15:37 by mfrasson         ###   ########.fr       */
+/*   Updated: 2023/04/11 06:50:53 by mfrasson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main( void )
     Bureaucrat karen("Karen", 1);
     std::cout << karen << std::endl;
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   try
@@ -31,9 +31,9 @@ int	main( void )
     Bureaucrat john("John", 150);
     std::cout << john << std::endl;
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   std::cout << std::endl << std::endl;
@@ -43,9 +43,9 @@ int	main( void )
     Bureaucrat karen("Karen", 0);
     std::cout << karen << std::endl;
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   try
@@ -53,9 +53,9 @@ int	main( void )
     Bureaucrat john("John", 151);
     std::cout << john << std::endl;
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   std::cout << std::endl << std::endl;
@@ -67,9 +67,9 @@ int	main( void )
     karen.downGrade();
     std::cout << karen << std::endl;
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   std::cout << std::endl;
@@ -81,9 +81,9 @@ int	main( void )
     john.upGrade();
     std::cout << john << std::endl;
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   std::cout << std::endl << std::endl;
@@ -94,9 +94,9 @@ int	main( void )
     std::cout << karen << std::endl;
     karen.upGrade();
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   std::cout << std::endl;
@@ -107,9 +107,9 @@ int	main( void )
     std::cout << john << std::endl;
     john.downGrade();
   }
-  catch (std::exception &ex)
+  catch (std::exception &excep)
   {
-    std::cerr << ex.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   std::cout << std::endl;

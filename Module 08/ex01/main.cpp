@@ -121,9 +121,9 @@ int main()
 			std::cout << "Try shortestSpan in Span(0): ";
 			std::cout << sp.shortestSpan() << std::endl;
 		}
-		catch(std::exception& ex)
+		catch(std::exception &excep)
 		{
-			std::cout << ex.what() << std::endl;
+			std::cout << excep.what() << std::endl;
 		}
 
 		try
@@ -131,9 +131,9 @@ int main()
 			std::cout << "Try longestSpan  in Span(0): ";
 			std::cout << sp.longestSpan() << std::endl;
 		}
-		catch(std::exception& ex)
+		catch(std::exception &excep)
 		{
-			std::cout << ex.what() << std::endl;
+			std::cout << excep.what() << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -145,9 +145,9 @@ int main()
 			std::cout << "Try shortestSpan in Span(1): ";
 			std::cout << sp.shortestSpan() << std::endl;
 		}
-		catch(std::exception& ex)
+		catch(std::exception &excep)
 		{
-			std::cout << ex.what() << std::endl;
+			std::cout << excep.what() << std::endl;
 		}
 
 		try
@@ -155,9 +155,9 @@ int main()
 			std::cout << "Try longestSpan  in Span(1): ";
 			std::cout << sp.longestSpan() << std::endl;
 		}
-		catch(std::exception& ex)
+		catch(std::exception &excep)
 		{
-			std::cout << ex.what() << std::endl;
+			std::cout << excep.what() << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -171,9 +171,9 @@ int main()
 
 			std::cout << "Success" << std::endl;
 		}
-		catch(std::exception& ex)
+		catch(std::exception &excep)
 		{
-			std::cout << ex.what() << std::endl;
+			std::cout << excep.what() << std::endl;
 		}
 	}
 

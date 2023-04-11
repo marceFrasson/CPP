@@ -63,9 +63,9 @@ int main( void )
 
 		numbers[MAX_VAL] = 0;
 	}
-	catch (const std::exception &e)
+	catch (const std::exception &excep)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << excep.what() << '\n';
 	}
 
 	std::cout << std::endl;

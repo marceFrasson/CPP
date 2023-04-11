@@ -59,9 +59,9 @@ void Bureaucrat::upGrade( void )
       throw GradeTooHighException();
   }
 
-  catch (const std::exception &exception)
+  catch (const std::exception &excep)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 }
 
@@ -75,9 +75,9 @@ void Bureaucrat::downGrade( void )
       throw GradeTooLowException();
   }
 
-  catch (const std::exception &exception)
+  catch (const std::exception &excep)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 }
 
@@ -88,9 +88,9 @@ void Bureaucrat::signForm( Form &form )
     form.beSigned(*this);
   }
   
-  catch (const std::exception &exception)
+  catch (const std::exception &excep)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 }
 

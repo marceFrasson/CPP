@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
 
     std::cout << "\nResult: " << result << std::endl << std::endl;
   }
-  catch (std::exception &exception)
+  catch (std::exception &excep)
   {
-    std::cerr << exception.what() << std::endl;
+    std::cerr << excep.what() << std::endl;
   }
 
   return (0);
