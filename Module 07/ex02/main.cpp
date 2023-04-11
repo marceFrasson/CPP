@@ -17,6 +17,7 @@ int main( void )
 
 
 
+
 	std::cout << "\n| assigning value test |\n" << std::endl;
 
 	Array<int> numbers(ARRAY_SIZE);
@@ -41,7 +42,7 @@ int main( void )
 			equal = 0;
 
 			std::cerr << "Didn't save the same value!" << std::endl;
-			
+
 			return (1);
 		}
 	}
@@ -51,8 +52,8 @@ int main( void )
 	
 	std::cout << '\n';
 
-	
-	
+
+
 
 	std::cout << "\n|    deep copy test    |\n" << std::endl;
 
@@ -69,8 +70,8 @@ int main( void )
 
 	std::cout << '\n';
 
-	
-	
+
+
 
 	std::cout << "\n|   index bounds test  |\n" << std::endl;
 
@@ -104,8 +105,8 @@ int main( void )
 
 	std::cout << '\n';
 
-	
-	
+
+
 
 	std::cout << "\n|   operator [] test   |\n" << std::endl;
 
@@ -128,8 +129,8 @@ int main( void )
 
 	std::cout << '\n';
 
-	
-	
+
+
 
 	std::cout << "\n|    char array test   |\n" << std::endl;
 
