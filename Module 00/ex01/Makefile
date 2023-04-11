@@ -2,18 +2,27 @@ SRC = 	Contact.cpp \
 				phonebook.cpp \
 				PhoneBook.cpp
 
+DEPS =	Contact.class.hpp \
+				includeLibs.hpp \
+				includes.hpp \
+				PhoneBook.class.hpp
+
 NAME = phonebook
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic 
+OBJ = $(SRC:.cpp=.o)
 
+FLAGS =  -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $@
 	@echo ""
 	@echo "|		phonebook created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 

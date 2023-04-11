@@ -2,18 +2,24 @@ SRC = 	main.cpp \
 				Zombie.cpp \
 				zombieHorde.cpp
 
+DEPS =	Zombie.hpp
+
 NAME = zombie
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
+OBJ = $(SRC:.cpp=.o)
 
+FLAGS =  -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $@
 	@echo ""
 	@echo "|		zombieHorde created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 

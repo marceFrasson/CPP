@@ -1,17 +1,24 @@
 SRC = 	Fixed.cpp \
 				main.cpp
 
+DEPS =	Fixed.hpp
+
 NAME = Fixed
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+OBJ = $(SRC:.cpp=.o)
 
-$(NAME): $(SRC)
-	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
+FLAGS =	-std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
+
+$(NAME): $(OBJ)
+	@$(CC) $(FLAGS) $^ -o $@
 	@echo ""
 	@echo "|		Fixed created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 

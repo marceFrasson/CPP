@@ -1,17 +1,24 @@
 SRC = 	ClapTrap.cpp \
 				main.cpp
 
+DEPS =	ClapTrap.hpp
+
 NAME = ClapTrap
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+OBJ = $(SRC:.cpp=.o)
 
-$(NAME): $(SRC)
-	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
+FLAGS =	-std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
+
+$(NAME): $(OBJ)
+	@$(CC) $(FLAGS) $^ -o $@
 	@echo ""
 	@echo "|		ClapTrap created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 

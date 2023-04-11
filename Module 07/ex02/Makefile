@@ -1,31 +1,37 @@
 SRC = 	main.cpp
 
+DEPS =	Array.hpp
 
-NAME = array
+NAME = Array
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+OBJ = $(SRC:.cpp=.o)
 
-$(NAME): $(SRC)
-	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
+FLAGS =	-std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
+
+$(NAME): $(OBJ)
+	@$(CC) $(FLAGS) $^ -o $@
 	@echo ""
-	@echo "|		array created		|"
+	@echo "|		Array created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
 clean:
 	@rm -f $(NAME)
 	@echo ""
-	@echo "|		array deleted		|"
+	@echo "|		Array deleted		|"
 	@echo ""
 
 fclean:
 	@rm -f $(NAME)
 	@rm -f *.o
 	@echo ""
-	@echo "|		array deleted		|"
+	@echo "|		Array deleted		|"
 	@echo ""
 
 re: fclean all

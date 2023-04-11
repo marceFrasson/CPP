@@ -4,14 +4,18 @@ NAME = megaphone
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -Wpedantic -std=c++98
+OBJ = $(SRC:.cpp=.o)
 
+FLAGS =	-std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
 
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $@
 	@echo ""
 	@echo "|		megaphone created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 

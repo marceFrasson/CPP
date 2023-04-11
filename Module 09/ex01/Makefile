@@ -1,18 +1,24 @@
 SRC = 	main.cpp \
 				RPN.cpp
 
+DEPS =	RPN.hpp
 
 NAME = RPN
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+OBJ = $(SRC:.cpp=.o)
 
-$(NAME): $(SRC)
-	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
+FLAGS =	-std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address
+
+$(NAME): $(OBJ)
+	@$(CC) $(FLAGS) $^ -o $@
 	@echo ""
 	@echo "|		RPN created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 

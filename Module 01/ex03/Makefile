@@ -3,19 +3,26 @@ SRC = 	HumanA.cpp \
 				main.cpp \
 				Weapon.cpp
 
+DEPS =	HumanA.hpp \
+				HumanB.hpp \
+				Weapon.hpp
 
 NAME = violence
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address 
+OBJ = $(SRC:.cpp=.o)
 
+FLAGS =  -std=c++98 -Wall -Wextra -Werror -Wpedantic -fsanitize=address 
 
 $(NAME): $(SRC)
 	@$(CC) $(FLAGS) $(SRC) -o $@
 	@echo ""
 	@echo "|		violence created		|"
 	@echo ""
+
+%.o: %.cpp $(DEPS)
+	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
