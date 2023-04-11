@@ -7,18 +7,32 @@
 int main( void )
 {
 
-	std::cout << "\n|  default value test  |\n" << std::endl;
+	std::cout
+
+			<<	
+						"\n|  default value test  |\n"
+			<<
+
+	std::endl;
+	
 
 	int *a = new int();
 
 	std::cout << "Initialized value by default = " << *a << std::endl;
 
-	std::cout << '\n';
+	std::cout << std::endl;
 
 
 
 
-	std::cout << "\n| assigning value test |\n" << std::endl;
+	std::cout
+
+			<<	
+						"\n| assigning value test |\n"
+			<<
+
+	std::endl;
+
 
 	Array<int> numbers(ARRAY_SIZE);
 	int *mirror = new int[ARRAY_SIZE];
@@ -50,12 +64,19 @@ int main( void )
 	if (equal)
 		std::cout << "The same values were saved!" << std::endl;
 	
-	std::cout << '\n';
+	std::cout << std::endl;
 
 
 
 
-	std::cout << "\n|    deep copy test    |\n" << std::endl;
+	std::cout
+
+			<<	
+						"\n|    deep copy test    |\n"
+			<<
+
+	std::endl;
+
 
 	Array<int> temp = numbers;
 	Array<int> test(temp);
@@ -68,12 +89,19 @@ int main( void )
 	else
 		std::cout << "Deep copy successful!" << std::endl;
 
-	std::cout << '\n';
+	std::cout << std::endl;
 
 
 
 
-	std::cout << "\n|   index bounds test  |\n" << std::endl;
+	std::cout
+
+			<<	
+						"\n|   index bounds test  |\n"
+			<<
+
+	std::endl;
+
 
 	int arraySize = ARRAY_SIZE;
 
@@ -103,12 +131,19 @@ int main( void )
 		std::cerr << excep.what() << std::endl;
 	}
 
-	std::cout << '\n';
+	std::cout << std::endl;
 
 
 
 
-	std::cout << "\n|   operator [] test   |\n" << std::endl;
+	std::cout
+
+			<<	
+						"\n|   operator [] test   |\n"
+			<<
+
+	std::endl;
+
 
 	for (int i = 0; i < ARRAY_SIZE; i++)
 		numbers[i] = rand();
@@ -127,12 +162,19 @@ int main( void )
 	else
 		std::cout << "Operator [] doesn't work!" << std::endl;
 
-	std::cout << '\n';
+	std::cout << std::endl;
 
 
 
 
-	std::cout << "\n|    char array test   |\n" << std::endl;
+	std::cout
+
+			<<	
+						"\n|    char array test   |\n"
+			<<
+
+	std::endl;
+
 
 	std::cout << "Expected char array: a b c d e" << std::endl;
 
@@ -164,7 +206,7 @@ int main( void )
 		}
 	}
 
-	std::cout << '\n' << std::endl;
+	std::cout << std::endl << std::endl;
 
 	delete a;
 	delete[] mirror;
