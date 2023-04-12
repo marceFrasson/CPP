@@ -24,7 +24,7 @@ class Span
     Span &operator=( const Span &rhs );
 
     void addNumber( int number );
-    void addNumbers( vector::iterator firstNumber, vector::iterator lastNumber );
+    void addNumbers( int arr[], int arraySize );
     
     int shortestSpan( void );
     int longestSpan( void );

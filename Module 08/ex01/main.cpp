@@ -7,22 +7,21 @@ int main()
 
 	unsigned int N = 10;
 	
-  {
-    Span sp = Span(5);
+	{
+		Span sp = Span(5);
 
-    sp.addNumber(6);
-    sp.addNumber(3);
-    sp.addNumber(17);
-    sp.addNumber(9);
-    sp.addNumber(11);
+		int array[] = {6, 3, 17, 9, 11};
+		int arraySize = sizeof(array) / sizeof(array[0]);
 
-    std::cout << "Numbers: 6, 3, 17, 9, 11";
+		sp.addNumbers(array, arraySize);
 
-    std::cout << std::endl << std::endl;
+		std::cout << "Numbers: 6, 3, 17, 9, 11";
+
+		std::cout << std::endl << std::endl;
 
 		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
 		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
-  }
+	}
 
 	std::cout << std::endl;
 
@@ -38,13 +37,13 @@ int main()
 		{
 			std::cout << j;
 
-      if (i < N - 1)
-        std::cout << ", ";
+      		if (i < N - 1)
+				std::cout << ", ";
         
 			sp.addNumber(j);
 			vec.push_back(j);
 			
-      j *= 2;
+      		j *= 2;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -67,13 +66,13 @@ int main()
 		{
 			std::cout << j;
 
-      if (i < N - 1)
-        std::cout << ", ";
+			if (i < N - 1)
+				std::cout << ", ";
         
 			sp.addNumber(j);
 			vec.push_back(j);
 			
-      j *= 3;
+      		j *= 3;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -96,13 +95,13 @@ int main()
 		{
 			std::cout << j;
 
-      if (i < N - 1)
-        std::cout << ", ";
+			if (i < N - 1)
+				std::cout << ", ";
         
 			sp.addNumber(j);
 			vec.push_back(j);
 			
-      j /= -2;
+      		j /= -2;
 		}
 
 		std::cout << std::endl << std::endl;
@@ -228,7 +227,7 @@ int main()
 		std::cout << "Longest  Span: " << sp.longestSpan() << std::endl;
 	}
 
-  std::cout << std::endl;
+	std::cout << std::endl;
 
 	return (0);
 

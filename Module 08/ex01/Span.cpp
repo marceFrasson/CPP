@@ -38,21 +38,20 @@ void Span::addNumber( int number )
   _vec.push_back(number);
 }
 
-void Span::addNumbers(  vector::iterator firstNumber, vector::iterator lastNumber )
+void Span::addNumbers( int arr[], int arraySize )
 {
-  while (firstNumber != lastNumber)
+  for (int i = 0; i < arraySize; ++i)
   {
-    if (_vec.size() != _size)
+    if (_vec.size() < _size)
     {
-      _vec.push_back(*firstNumber);
-      firstNumber++;
+      _vec.push_back(arr[i]);
     }
-
+    
     else
+    {
       throw fullSpanException();
+    }
   }
-  
-  _vec.push_back(*lastNumber);
 }
 
 int Span::shortestSpan( void )

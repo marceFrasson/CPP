@@ -27,10 +27,16 @@ int main( void )
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
+	mstack.push(99);
+	mstack.push(18);
+	mstack.push(20);
     mstack.push(0);
     
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
+
+	++it;
+	--it;
 
     std::cout << std::endl << "   numbers: ";
 
@@ -54,28 +60,31 @@ int main( void )
   {
     std::cout << "List\n{" << std::endl;
 
-    std::list<int> mstack;
+    std::list<int> lstack;
 
-    mstack.push_back(5);
-    mstack.push_back(17);
-
-    std::cout << std::endl;
-
-    std::cout << "   top: " << mstack.back() << std::endl;
-
-    mstack.pop_back();
+    lstack.push_back(5);
+    lstack.push_back(17);
 
     std::cout << std::endl;
 
-    std::cout << "   size: " << mstack.size() << std::endl;
+    std::cout << "   top: " << lstack.back() << std::endl;
 
-    mstack.push_back(3);
-    mstack.push_back(5);
-    mstack.push_back(737);
-    mstack.push_back(0);
+    lstack.pop_back();
+
+    std::cout << std::endl;
+
+    std::cout << "   size: " << lstack.size() << std::endl;
+
+    lstack.push_back(3);
+    lstack.push_back(5);
+    lstack.push_back(737);
+	lstack.push_back(99);
+	lstack.push_back(18);
+	lstack.push_back(20);
+    lstack.push_back(0);
     
-    std::list<int>::iterator it = mstack.begin();
-    std::list<int>::iterator ite = mstack.end();
+    std::list<int>::iterator it = lstack.begin();
+    std::list<int>::iterator ite = lstack.end();
 
     std::cout << std::endl << "   numbers: ";
 
@@ -85,7 +94,7 @@ int main( void )
     {
       std::cout << *it;
 
-      if (i++ < mstack.size())
+      if (i++ < lstack.size())
         std::cout << ", ";
 
       ++it;
